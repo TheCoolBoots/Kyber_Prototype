@@ -15,7 +15,7 @@
 /Kyber_Furniture/[Mm]emoryCaptures/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
-!/[Aa]ssets/**/*.meta
+#!/[Aa]ssets/**/*.meta
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
@@ -64,8 +64,8 @@
 /Kyber_Furniture/crashlytics-build.properties
 
 # Packed Addressables
-/Kyber_Furniture/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+#/Kyber_Furniture/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 
 # Temporary auto-generated Android Assets
-/Kyber_Furniture/[Aa]ssets/[Ss]treamingAssets/aa.meta
-/Kyber_Furniture/[Aa]ssets/[Ss]treamingAssets/aa/*
+#/Kyber_Furniture/[Aa]ssets/[Ss]treamingAssets/aa.meta
+#/Kyber_Furniture/[Aa]ssets/[Ss]treamingAssets/aa/*
