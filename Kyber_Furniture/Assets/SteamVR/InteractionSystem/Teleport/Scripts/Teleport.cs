@@ -14,6 +14,7 @@ namespace Valve.VR.InteractionSystem
 	public class Teleport : MonoBehaviour
     {
         public SteamVR_Action_Boolean teleportAction = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("Teleport");
+		public SteamVR_Action_Boolean showAction = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("ShowTeleportRay");
 
         public LayerMask traceLayerMask;
 		public LayerMask floorFixupTraceLayerMask;
@@ -125,7 +126,9 @@ namespace Valve.VR.InteractionSystem
 
 		//-------------------------------------------------
 		private static Teleport _instance;
-		public static Teleport instance
+        private bool showHints = false;
+
+        public static Teleport instance
 		{
 			get
 			{
@@ -188,7 +191,8 @@ namespace Valve.VR.InteractionSystem
 
 			CheckForSpawnPoint();
 
-			Invoke( "ShowTeleportHint", 5.0f );
+			if(showHints)
+				Invoke( "ShowTeleportHint", 5.0f );
 		}
 
 
