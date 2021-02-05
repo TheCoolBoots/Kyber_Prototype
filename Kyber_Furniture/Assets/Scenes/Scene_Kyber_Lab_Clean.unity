@@ -121,7 +121,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &255652177
+--- !u!1001 &705664579
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -131,22 +131,7 @@ PrefabInstance:
     - target: {fileID: 6581205173714676940, guid: 6a126abae675e8942902ab90b072ae76,
         type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6581205173714676940, guid: 6a126abae675e8942902ab90b072ae76,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6581205173714696754, guid: 6a126abae675e8942902ab90b072ae76,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6581205173714713088, guid: 6a126abae675e8942902ab90b072ae76,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
+      value: Kyber_Player
       objectReference: {fileID: 0}
     - target: {fileID: 6581205173714984116, guid: 6a126abae675e8942902ab90b072ae76,
         type: 3}
@@ -156,7 +141,7 @@ PrefabInstance:
     - target: {fileID: 6581205173714984116, guid: 6a126abae675e8942902ab90b072ae76,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.694
       objectReference: {fileID: 0}
     - target: {fileID: 6581205173714984116, guid: 6a126abae675e8942902ab90b072ae76,
         type: 3}
@@ -297,6 +282,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1082243957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1082243960}
+  - component: {fileID: 1082243958}
+  m_Layer: 9
+  m_Name: PostProcessingManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1082243958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082243957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: cc0cb9caf8abf8040a205949305411bc, type: 2}
+--- !u!4 &1082243960
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082243957}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.18, y: 2.4, z: 0.2}
+  m_LocalScale: {x: 12.961848, y: 5.056158, z: 12.961848}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1194048113
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +344,7 @@ GameObject:
   - component: {fileID: 1194048115}
   - component: {fileID: 1194048114}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Teleport Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -363,7 +396,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 417e639b66cd3a24e9c5312be99ce3bd, type: 2}
+  - {fileID: 2100000, guid: d2bbbd01c5b7a6b4bb5a1316f21fc1ff, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
