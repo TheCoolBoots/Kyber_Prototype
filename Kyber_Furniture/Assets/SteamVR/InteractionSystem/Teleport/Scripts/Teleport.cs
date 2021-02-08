@@ -7,6 +7,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+using UnityEngine.UI;
 
 namespace Valve.VR.InteractionSystem
 {
@@ -58,6 +59,9 @@ namespace Valve.VR.InteractionSystem
 		public AudioClip pointerStopSound;
 		public AudioClip goodHighlightSound;
 		public AudioClip badHighlightSound;
+
+//		[Header( "Teleport Blink" )]
+//		public Image blackScreen;
 
 		[Header( "Debug" )]
 		public bool debugFloor = false;
@@ -193,6 +197,9 @@ namespace Valve.VR.InteractionSystem
 
 			if(showHints)
 				Invoke( "ShowTeleportHint", 5.0f );
+
+			//blackScreen.gameObject.SetActive(true);
+			//blackScreen.canvasRenderer.SetAlpha(0.0f);
 		}
 
 
@@ -846,8 +853,11 @@ namespace Valve.VR.InteractionSystem
 				Teleport.ChangeScene.Send( currentFadeTime );
 			}
 
-			SteamVR_Fade.Start( Color.clear, 0 );
-			SteamVR_Fade.Start( Color.black, currentFadeTime );
+			//SteamVR_Fade.Start doesn't work with Universal Render Pipeline
+			//SteamVR_Fade.Start( Color.clear, 0 );
+			//SteamVR_Fade.Start( Color.black, currentFadeTime );
+			SteamVR_Fade.View(Color.clear, 0);
+			SteamVR_Fade.View(Color.black, currentFadeTime);
 
 			headAudioSource.transform.SetParent( player.hmdTransform );
 			headAudioSource.transform.localPosition = Vector3.zero;
@@ -864,7 +874,8 @@ namespace Valve.VR.InteractionSystem
 
 			Teleport.PlayerPre.Send( pointedAtTeleportMarker );
 
-			SteamVR_Fade.Start( Color.clear, currentFadeTime );
+			//SteamVR_Fade.Start( Color.clear, currentFadeTime );
+			SteamVR_Fade.View(Color.clear, currentFadeTime);
 
 			TeleportPoint teleportPoint = teleportingToMarker as TeleportPoint;
 			Vector3 teleportPosition = pointedAtPosition;
@@ -911,6 +922,7 @@ namespace Valve.VR.InteractionSystem
 			}
 
 			Teleport.Player.Send( pointedAtTeleportMarker );
+			//Debug.Log("teleported");
 		}
 
 
@@ -1163,5 +1175,21 @@ namespace Valve.VR.InteractionSystem
 				return hand.transform;
 			}
 		}
+
+/*		public void ActivateTeleportFade(float fadeDuration)
+		{
+			FadeOut(fadeDuration);
+			FadeIn(fadeDuration);
+		}
+
+		private void FadeOut(float fadeDuration)
+		{
+			blackScreen.CrossFadeAlpha(255, fadeDuration, false);
+		}
+
+		private void FadeIn(float fadeDuration)
+		{
+			blackScreen.CrossFadeAlpha(0, fadeDuration, false);
+		}*/
 	}
 }
