@@ -60,9 +60,6 @@ namespace Valve.VR.InteractionSystem
 		public AudioClip goodHighlightSound;
 		public AudioClip badHighlightSound;
 
-//		[Header( "Teleport Blink" )]
-//		public Image blackScreen;
-
 		[Header( "Debug" )]
 		public bool debugFloor = false;
 		public bool showOffsetReticle = false;
@@ -197,9 +194,6 @@ namespace Valve.VR.InteractionSystem
 
 			if(showHints)
 				Invoke( "ShowTeleportHint", 5.0f );
-
-			//blackScreen.gameObject.SetActive(true);
-			//blackScreen.canvasRenderer.SetAlpha(0.0f);
 		}
 
 
@@ -1176,20 +1170,5 @@ namespace Valve.VR.InteractionSystem
 			}
 		}
 
-/*		public void ActivateTeleportFade(float fadeDuration)
-		{
-			FadeOut(fadeDuration);
-			FadeIn(fadeDuration);
-		}
-
-		private void FadeOut(float fadeDuration)
-		{
-			blackScreen.CrossFadeAlpha(255, fadeDuration, false);
-		}
-
-		private void FadeIn(float fadeDuration)
-		{
-			blackScreen.CrossFadeAlpha(0, fadeDuration, false);
-		}*/
 	}
 }
