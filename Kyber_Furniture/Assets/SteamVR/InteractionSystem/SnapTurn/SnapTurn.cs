@@ -117,11 +117,11 @@ namespace Valve.VR.InteractionSystem
 
             if (fadeScreen)
             {
-                SteamVR_Fade.Start(Color.clear, 0);
+                SteamVR_Fade.View(Color.clear, 0);
 
                 Color tColor = screenFadeColor;
                 tColor = tColor.linear * 0.6f;
-                SteamVR_Fade.Start(tColor, fadeTime);
+                SteamVR_Fade.View(tColor, fadeTime);
             }
 
             yield return new WaitForSeconds(fadeTime);
@@ -139,7 +139,7 @@ namespace Valve.VR.InteractionSystem
 
             if (fadeScreen)
             {
-                SteamVR_Fade.Start(Color.clear, fadeTime);
+                SteamVR_Fade.View(Color.clear, fadeTime);
             }
 
             float startTime = Time.time;
