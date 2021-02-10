@@ -130,18 +130,33 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2152799237704580024, guid: 6a126abae675e8942902ab90b072ae76,
         type: 3}
+      propertyPath: m_CameraType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2152799237704580024, guid: 6a126abae675e8942902ab90b072ae76,
+        type: 3}
       propertyPath: m_RendererIndex
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2152799237704580024, guid: 6a126abae675e8942902ab90b072ae76,
         type: 3}
       propertyPath: m_RenderPostProcessing
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539263334877802096, guid: 6a126abae675e8942902ab90b072ae76,
+        type: 3}
+      propertyPath: showTurnAnimation
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6581205173713434542, guid: 6a126abae675e8942902ab90b072ae76,
         type: 3}
       propertyPath: m_HDR
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6581205173713434542, guid: 6a126abae675e8942902ab90b072ae76,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6581205173714653584, guid: 6a126abae675e8942902ab90b072ae76,
         type: 3}
@@ -349,6 +364,11 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6581640032750818350, guid: 6a126abae675e8942902ab90b072ae76,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6581640032779543962, guid: 6a126abae675e8942902ab90b072ae76,
         type: 3}
       propertyPath: m_Layer
       value: 8
@@ -562,6 +582,7 @@ GameObject:
   - component: {fileID: 1064385811}
   - component: {fileID: 1064385809}
   - component: {fileID: 1064385810}
+  - component: {fileID: 1064385815}
   - component: {fileID: 1064385808}
   m_Layer: 0
   m_Name: TestBall
@@ -760,12 +781,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1064385807}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.79, z: 0}
-  m_LocalScale: {x: 0.20272, y: 0.20272, z: 0.20272}
+  m_LocalPosition: {x: 0, y: 1.056, z: 0}
+  m_LocalScale: {x: 1.2660637, y: 1.2660637, z: 1.2660637}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1064385815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064385807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1194048113
 GameObject:
   m_ObjectHideFlags: 0
@@ -2951,10 +2990,10 @@ MonoBehaviour:
   volumeTrigger: {fileID: 6581205174150320871}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 256
-  stopNaNPropagation: 1
+    m_Bits: 512
+  stopNaNPropagation: 0
   finalBlitToCameraTarget: 0
-  antialiasingMode: 2
+  antialiasingMode: 0
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25
