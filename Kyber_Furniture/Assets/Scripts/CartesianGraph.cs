@@ -5,14 +5,20 @@ using UnityEngine.UI;
 
 public class CartesianGraph : MonoBehaviour
 {
-    public float xAxisMin = -10f;
-    public float xAxisMax = 100f;
-    public float yAxisMin = -10f;
-    public float yAxisMax = 100f;
+    public float xAxisMin = -12f;
+    public float xAxisMax = 102f;
+    public float yAxisMin = -12f;
+    public float yAxisMax = 102f;
+
+    public float xStep = 10;
+    public float yStep = 10;
 
     public float dotSpriteScaleFactor = .1f;
     public float gridLineThickness = 1f;
-    
+
+    [SerializeField] public Color backgroundColor;
+    [SerializeField] public Color gridlineColor;
+
     [SerializeField] private Sprite dotSprite;
 
     private RectTransform graphContainer;
@@ -27,13 +33,19 @@ public class CartesianGraph : MonoBehaviour
         window = GetComponent<RectTransform>();
         windowSize = new Vector2(window.rect.width, window.rect.height);
         graphContainer = transform.Find("GraphContainer").GetComponent<RectTransform>();
+        Image background = transform.Find("Background").GetComponent<Image>();
+        background.color = backgroundColor;
 
-        DrawPoint(new Vector2(1f, 1f));
-        DrawPoint(new Vector2(50f, 50f));
-
-        DrawHorizontalGridLine(10);
-        DrawVerticalGridLine(10);
+        ReDrawGraph();
     }
+
+    public void ReDrawGraph()
+    {
+        EraseGraph();
+        DrawGraphLines();
+        DrawCartesianPoints();
+    }
+
 
     public void SetWindow(float xMin, float xMax, float yMin, float yMax)
     {
@@ -42,7 +54,7 @@ public class CartesianGraph : MonoBehaviour
         yAxisMin = yMin;
         yAxisMax = yMax;
 
-        ReDrawCartesianPoints();
+        DrawCartesianPoints();
     }
 
     public void AddCartesianPoint(Vector2 point)
@@ -53,22 +65,48 @@ public class CartesianGraph : MonoBehaviour
 
     public void ResetGraph()
     {
-        foreach (Transform child in graphContainer)
-        {
-            Destroy(child);
-        }
+        EraseGraph();
 
         // delete all old points
         cartesianPoints = new List<Vector2>();
     }
 
-    private void ReDrawCartesianPoints()
+    private void EraseGraph()
     {
         foreach (Transform child in graphContainer)
         {
             Destroy(child);
         }
+    }
 
+    private void DrawGraphLines()
+    {
+        float currentVertLineX = (int)(xAxisMin/xStep) * xStep;
+        float currentHorizLineY = (int)(yAxisMin/yStep) * yStep;
+
+        if (xAxisMin > 0)
+            currentVertLineX += xStep;
+        if (yAxisMin > 0)
+            currentHorizLineY += yStep;
+
+        Debug.Log("startX: " + currentVertLineX);
+        Debug.Log("startY: " + currentHorizLineY);
+
+        while(currentVertLineX < xAxisMax)
+        {
+            DrawVerticalGridLine(Map(currentVertLineX, xAxisMin, xAxisMax, 0, windowSize.x));
+            currentVertLineX += xStep;
+        }
+
+        while (currentHorizLineY < yAxisMax)
+        {
+            DrawHorizontalGridLine(Map(currentHorizLineY, yAxisMin, yAxisMax, 0, windowSize.y));
+            currentHorizLineY += yStep;
+        }
+    }
+
+    private void DrawCartesianPoints()
+    {
         foreach (Vector2 point in cartesianPoints)
         {
             DrawCartesianPoint(point);
@@ -115,13 +153,15 @@ public class CartesianGraph : MonoBehaviour
         GameObject newLine = new GameObject("vertGridLine", typeof(Image));
         newLine.transform.SetParent(graphContainer, false);
 
-        RectTransform newPointTransform = newLine.GetComponent<RectTransform>();
-        newPointTransform.anchoredPosition = new Vector2(x, windowSize.y / 2);
+        newLine.GetComponent<Image>().color = gridlineColor;
 
-        newPointTransform.anchorMin = Vector2.zero;
-        newPointTransform.anchorMax = Vector2.zero;
+        RectTransform newLineTransform = newLine.GetComponent<RectTransform>();
+        newLineTransform.anchoredPosition = new Vector2(x, windowSize.y / 2);
 
-        newPointTransform.sizeDelta = new Vector2(gridLineThickness, windowSize.y);
+        newLineTransform.anchorMin = Vector2.zero;
+        newLineTransform.anchorMax = Vector2.zero;
+
+        newLineTransform.sizeDelta = new Vector2(gridLineThickness, windowSize.y);
     }
 
     private void DrawHorizontalGridLine(float y)
@@ -129,14 +169,15 @@ public class CartesianGraph : MonoBehaviour
         GameObject newLine = new GameObject("horizGridLine", typeof(Image));
         newLine.transform.SetParent(graphContainer, false);
 
-        RectTransform newPointTransform = newLine.GetComponent<RectTransform>();
-        newPointTransform.anchoredPosition = new Vector2(windowSize.x / 2, y);
+        newLine.GetComponent<Image>().color = gridlineColor;
 
+        RectTransform newLineTransform = newLine.GetComponent<RectTransform>();
+        newLineTransform.anchoredPosition = new Vector2(windowSize.x / 2, y);
 
-        newPointTransform.anchorMin = Vector2.zero;
-        newPointTransform.anchorMax = Vector2.zero;
+        newLineTransform.anchorMin = Vector2.zero;
+        newLineTransform.anchorMax = Vector2.zero;
 
-        newPointTransform.sizeDelta = new Vector2(windowSize.x, gridLineThickness);
+        newLineTransform.sizeDelta = new Vector2(windowSize.x, gridLineThickness);
     }
 
 
