@@ -113,11 +113,11 @@ namespace Valve.VR
             }
         }
         
-        public virtual SteamVR_Action_Boolean ShowTeleportRay
+        public virtual SteamVR_Action_Single ControllerTrigger
         {
             get
             {
-                return SteamVR_Actions.default_ShowTeleportRay;
+                return SteamVR_Actions.default_ControllerTrigger;
             }
         }
         
