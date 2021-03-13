@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-/*
-public class IKCCD : MonoBehaviour
+
+public class FastIKCCD : MonoBehaviour
 {
     public int ChainLength = 2;
     public Transform Target;
@@ -92,4 +92,3 @@ public class IKCCD : MonoBehaviour
     
 
 }
-*/
