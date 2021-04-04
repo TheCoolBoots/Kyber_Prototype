@@ -5,7 +5,7 @@
       "type": "boolean"
     },
     {
-      "name": "/actions/default/in/Teleport",
+      "name": "/actions/default/in/TeleportAndDescend",
       "type": "boolean"
     },
     {
@@ -56,6 +56,10 @@
     {
       "name": "/actions/default/in/ControllerTrigger",
       "type": "vector1"
+    },
+    {
+      "name": "/actions/default/in/Ascend",
+      "type": "boolean"
     },
     {
       "name": "/actions/default/out/Haptic",
@@ -173,7 +177,6 @@
       "/actions/default/in/Pose": "Pose",
       "/actions/default/in/SkeletonLeftHand": "Skeleton (Left)",
       "/actions/default/in/SkeletonRightHand": "Skeleton (Right)",
-      "/actions/default/in/Teleport": "Teleport",
       "/actions/default/out/Haptic": "Haptic",
       "/actions/platformer/in/Jump": "Jump",
       "/actions/default/in/SnapTurnLeft": "Snap Turn (Left)",

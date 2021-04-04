@@ -25,11 +25,11 @@ namespace Valve.VR
             }
         }
         
-        public virtual SteamVR_Action_Boolean Teleport
+        public virtual SteamVR_Action_Boolean TeleportAndDescend
         {
             get
             {
-                return SteamVR_Actions.default_Teleport;
+                return SteamVR_Actions.default_TeleportAndDescend;
             }
         }
         
@@ -118,6 +118,14 @@ namespace Valve.VR
             get
             {
                 return SteamVR_Actions.default_ControllerTrigger;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean Ascend
+        {
+            get
+            {
+                return SteamVR_Actions.default_Ascend;
             }
         }
         
