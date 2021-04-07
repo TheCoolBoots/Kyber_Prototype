@@ -16,7 +16,7 @@ public class SimpleSubmarineController : MonoBehaviour
 
     public GameObject rightControllerTarget;
 
-    private bool enabled = false;
+    private bool active = false;
 
     private Rigidbody thisrigidbody;
 
@@ -30,7 +30,7 @@ public class SimpleSubmarineController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (enabled)
+        if (active)
         {
             AddThrusterForce();
 
@@ -68,11 +68,11 @@ public class SimpleSubmarineController : MonoBehaviour
 
     public void EnableSubControl()
     {
-        enabled = true;
+        active = true;
     }
 
     public void DisableSubControl()
     {
-        enabled = false;
+        active = false;
     }
 }
