@@ -581,8 +581,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497607519}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.215, y: -1.7443995, z: 0.342}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.217, y: -1.7440426, z: 0.343194}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 171128663}
@@ -598,7 +598,7 @@ SpringJoint:
   m_ConnectedBody: {fileID: 1038950248}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.024999864, y: -0.014925001, z: 0.004458426}
+  m_ConnectedAnchor: {x: 0, y: 1.7763568e-13, z: -0.000002980232}
   serializedVersion: 2
   m_Spring: 10
   m_Damper: 0.5
@@ -1168,8 +1168,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984538119}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2159, y: -1.7443995, z: 0.342}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.21627426, y: -1.7440426, z: 0.343194}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 171128663}
@@ -1185,7 +1185,7 @@ SpringJoint:
   m_ConnectedBody: {fileID: 3625219979095342009}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0046782196, y: -0.014925001, z: 0.004458426}
+  m_ConnectedAnchor: {x: 0, y: 1.7763568e-13, z: -0.000002980232}
   serializedVersion: 2
   m_Spring: 10
   m_Damper: 0.5
@@ -6461,17 +6461,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystickInput:
-    actionPath: 
-    needsReinit: 1
+    actionPath: /actions/default/in/CtlJoystick
+    needsReinit: 0
   ascend:
-    actionPath: 
-    needsReinit: 1
+    actionPath: /actions/default/in/Ascend
+    needsReinit: 0
   descend:
-    actionPath: 
-    needsReinit: 1
-  thrusterMagnitude: 3
+    actionPath: /actions/default/in/TeleportAndDescend
+    needsReinit: 0
+  thrusterMagnitude: 12
   turnMagnitude: 0.3
   ascendDescendMag: 3
+  rightControllerTarget: {fileID: 1038950242}
 --- !u!54 &6619357822401326550
 Rigidbody:
   m_ObjectHideFlags: 0

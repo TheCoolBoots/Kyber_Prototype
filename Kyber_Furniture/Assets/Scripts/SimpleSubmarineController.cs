@@ -10,17 +10,22 @@ public class SimpleSubmarineController : MonoBehaviour
     public SteamVR_Action_Boolean ascend;
     public SteamVR_Action_Boolean descend;
 
-    public float thrusterMagnitude = 3f;
+    public float thrusterMagnitude = 12f;
     public float turnMagnitude = .3f;
     public float ascendDescendMag = 3f;
+
+    public GameObject rightControllerTarget;
 
     private bool enabled = false;
 
     private Rigidbody thisrigidbody;
 
+    private Vector3 originalPos;
+
     void Start()
     {
         thisrigidbody = GetComponent<Rigidbody>();
+        originalPos = rightControllerTarget.transform.localPosition;
     }
 
     void FixedUpdate()
@@ -37,9 +42,10 @@ public class SimpleSubmarineController : MonoBehaviour
 
     private void AddThrusterForce()
     {
-        Vector3 direction = transform.TransformDirection(new Vector3(0, -joystickInput.axis.y, 0));
+        // force is relative to magnitude of current controller position minus original controller position
+        Vector3 direction = transform.TransformDirection(rightControllerTarget.transform.localPosition - originalPos);
 
-        // makes movement relative to the direction the player is facing, then ensures that it is in the XZ plane
+        // makes movement relative to the direction the submarine is facing, then ensures that it is in the XZ plane
         thisrigidbody.AddForce(thrusterMagnitude * Vector3.ProjectOnPlane(direction, Vector3.up));
     }
 
@@ -57,7 +63,6 @@ public class SimpleSubmarineController : MonoBehaviour
 
     private void AddRotationalForce()
     {
-        // transform.Rotate(new Vector3(0, 0, joystickInput.axis.x * turnMagnitude));
         thisrigidbody.AddTorque(new Vector3(0, joystickInput.axis.x * turnMagnitude, 0));
     }
 
