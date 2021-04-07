@@ -39,7 +39,7 @@ namespace Valve.VR
         
         private static SteamVR_Action_Boolean p_default_SnapTurnRight;
         
-        private static SteamVR_Action_Vector2 p_default_LeftJoystick;
+        private static SteamVR_Action_Vector2 p_default_CtlJoystick;
         
         private static SteamVR_Action_Single p_default_ControllerTrigger;
         
@@ -149,11 +149,11 @@ namespace Valve.VR
             }
         }
         
-        public static SteamVR_Action_Vector2 default_LeftJoystick
+        public static SteamVR_Action_Vector2 default_CtlJoystick
         {
             get
             {
-                return SteamVR_Actions.p_default_LeftJoystick.GetCopy<SteamVR_Action_Vector2>();
+                return SteamVR_Actions.p_default_CtlJoystick.GetCopy<SteamVR_Action_Vector2>();
             }
         }
         
@@ -251,7 +251,7 @@ namespace Valve.VR
                     SteamVR_Actions.default_HeadsetOnHead,
                     SteamVR_Actions.default_SnapTurnLeft,
                     SteamVR_Actions.default_SnapTurnRight,
-                    SteamVR_Actions.default_LeftJoystick,
+                    SteamVR_Actions.default_CtlJoystick,
                     SteamVR_Actions.default_ControllerTrigger,
                     SteamVR_Actions.default_Ascend,
                     SteamVR_Actions.default_Haptic,
@@ -274,7 +274,7 @@ namespace Valve.VR
                     SteamVR_Actions.default_HeadsetOnHead,
                     SteamVR_Actions.default_SnapTurnLeft,
                     SteamVR_Actions.default_SnapTurnRight,
-                    SteamVR_Actions.default_LeftJoystick,
+                    SteamVR_Actions.default_CtlJoystick,
                     SteamVR_Actions.default_ControllerTrigger,
                     SteamVR_Actions.default_Ascend,
                     SteamVR_Actions.platformer_Move,
@@ -308,7 +308,7 @@ namespace Valve.VR
                     SteamVR_Actions.default_ControllerTrigger,
                     SteamVR_Actions.buggy_Throttle};
             Valve.VR.SteamVR_Input.actionsVector2 = new Valve.VR.SteamVR_Action_Vector2[] {
-                    SteamVR_Actions.default_LeftJoystick,
+                    SteamVR_Actions.default_CtlJoystick,
                     SteamVR_Actions.platformer_Move,
                     SteamVR_Actions.buggy_Steering};
             Valve.VR.SteamVR_Input.actionsVector3 = new Valve.VR.SteamVR_Action_Vector3[0];
@@ -324,7 +324,7 @@ namespace Valve.VR
                     SteamVR_Actions.default_HeadsetOnHead,
                     SteamVR_Actions.default_SnapTurnLeft,
                     SteamVR_Actions.default_SnapTurnRight,
-                    SteamVR_Actions.default_LeftJoystick,
+                    SteamVR_Actions.default_CtlJoystick,
                     SteamVR_Actions.default_ControllerTrigger,
                     SteamVR_Actions.default_Ascend,
                     SteamVR_Actions.platformer_Move,
@@ -348,7 +348,7 @@ namespace Valve.VR
             SteamVR_Actions.p_default_HeadsetOnHead = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/HeadsetOnHead")));
             SteamVR_Actions.p_default_SnapTurnLeft = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/SnapTurnLeft")));
             SteamVR_Actions.p_default_SnapTurnRight = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/SnapTurnRight")));
-            SteamVR_Actions.p_default_LeftJoystick = ((SteamVR_Action_Vector2)(SteamVR_Action.Create<SteamVR_Action_Vector2>("/actions/default/in/LeftJoystick")));
+            SteamVR_Actions.p_default_CtlJoystick = ((SteamVR_Action_Vector2)(SteamVR_Action.Create<SteamVR_Action_Vector2>("/actions/default/in/CtlJoystick")));
             SteamVR_Actions.p_default_ControllerTrigger = ((SteamVR_Action_Single)(SteamVR_Action.Create<SteamVR_Action_Single>("/actions/default/in/ControllerTrigger")));
             SteamVR_Actions.p_default_Ascend = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/Ascend")));
             SteamVR_Actions.p_default_Haptic = ((SteamVR_Action_Vibration)(SteamVR_Action.Create<SteamVR_Action_Vibration>("/actions/default/out/Haptic")));

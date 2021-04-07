@@ -12,6 +12,7 @@ using System.Collections.Generic;
 namespace Valve.VR.InteractionSystem
 {
     [RequireComponent (typeof (HoverOutliner.OutlineController))]
+    [RequireComponent (typeof (Outliner.Outline))]
 
     //-------------------------------------------------------------------------
     public class Interactable : MonoBehaviour

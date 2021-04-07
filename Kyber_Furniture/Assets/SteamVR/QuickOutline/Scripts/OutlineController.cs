@@ -5,8 +5,6 @@ using UnityEngine;
 
 namespace HoverOutliner
 {
-    [RequireComponent(typeof(Outline))]
-    [RequireComponent(typeof(Interactable))]
     public class OutlineController : MonoBehaviour
     {
         private Outline outline;

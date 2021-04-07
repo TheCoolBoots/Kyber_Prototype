@@ -105,11 +105,11 @@ namespace Valve.VR
             }
         }
         
-        public virtual SteamVR_Action_Vector2 LeftJoystick
+        public virtual SteamVR_Action_Vector2 CtlJoystick
         {
             get
             {
-                return SteamVR_Actions.default_LeftJoystick;
+                return SteamVR_Actions.default_CtlJoystick;
             }
         }
         

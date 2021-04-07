@@ -50,7 +50,7 @@
       "type": "boolean"
     },
     {
-      "name": "/actions/default/in/LeftJoystick",
+      "name": "/actions/default/in/CtlJoystick",
       "type": "vector2"
     },
     {
