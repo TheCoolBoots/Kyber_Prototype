@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 8a96d126f6baf6b45b0ff34fa5184cc4
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _DropletCutout: {fileID: 2800000, guid: 22bdafb3e875133449518d7c0d57b8e9, type: 3}
+  - _DropletNormals: {fileID: 2800000, guid: 957a873581e6f4c41b5ab0876dfb33e7, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
