@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.kyberprototype.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\Andrew Lai\\Documents\\Stuff\\Kyber\\KyberPrototype\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "KyberPrototype [Testing]"
+        }
+      }
+    }
+  ]
+}
