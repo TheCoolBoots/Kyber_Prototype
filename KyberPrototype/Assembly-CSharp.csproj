@@ -92,9 +92,8 @@
     <Compile Include="Assets\AQUAS 2020\Scripts\Utils\AQUAS_RenderQueueEditor.cs" />
     <Compile Include="Assets\AQUAS 2020\Scripts\Utils\AQUAS_Screenshotter.cs" />
     <Compile Include="Assets\Scripts\Compounds\Compound.cs" />
-    <Compile Include="Assets\Scripts\Compounds\CompoundContainer.cs" />
-    <Compile Include="Assets\Scripts\Compounds\MixtureCompound.cs" />
-    <Compile Include="Assets\Scripts\Compounds\PureCompound.cs" />
+    <Compile Include="Assets\Scripts\Compounds\CompoundData.cs" />
+    <Compile Include="Assets\Scripts\Compounds\CompoundTable.cs" />
     <Compile Include="Assets\Scripts\FastIK\FastIKCCD.cs" />
     <Compile Include="Assets\Scripts\FastIK\FastIKFabric.cs" />
     <Compile Include="Assets\Scripts\FastIK\FastIKLook.cs" />
