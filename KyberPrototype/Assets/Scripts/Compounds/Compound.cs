@@ -6,7 +6,6 @@ namespace Kyber
 {
     public class Compound : MonoBehaviour
     {
-        public GameObject compoundTableReference;
         public CompoundIDs compound = CompoundIDs.PureWater;
 
         [HideInInspector]

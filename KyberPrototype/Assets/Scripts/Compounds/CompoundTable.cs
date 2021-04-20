@@ -27,7 +27,7 @@ namespace Kyber
         {
             compoundTable = new Dictionary<CompoundIDs, CompoundData>(100);
             // CompoundIDs compoundID, States state, string commonName, float density, float volume, bool stable, string chemicalFormula
-            compoundTable.Add(CompoundIDs.H, new CompoundData(States.Gas, "Hydrogen Gas", .002, 300, true, "H", "AirSphere", .04f));
+            compoundTable.Add(CompoundIDs.H, new CompoundData(States.Gas, "Hydrogen Gas", .002, 300, true, "H", "AirSphere/AirSphere", .04f));
             // compoundTable.Add(CompoundIDs.C, new CompoundData(States.Solid, "Carbon", .1, 300, true, "C(1)"));
             // compoundTable.Add(CompoundIDs.N, new CompoundData(States.Gas, "Nitrogen Gas", .02, 300, true, "N(1)"));
             compoundTable.Add(CompoundIDs.PureWater, new CompoundData(States.Liquid, "Water", 1.0, 1.0, true, "H2O", "WaterSphere", .95f));

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4712657758934334699}
   - component: {fileID: 2888673089498076954}
   - component: {fileID: 3173880706883826249}
+  - component: {fileID: 2219229663385530520}
   - component: {fileID: 5562472748080524011}
   m_Layer: 0
   m_Name: CompoundContainer
@@ -222,6 +223,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   interactable: {fileID: 0}
+--- !u!114 &2219229663385530520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343393469658484672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 783750eec4c41da428b7651515146d14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocityAverageFrames: 5
+  angularVelocityAverageFrames: 11
+  estimateOnAwake: 0
 --- !u!114 &5562472748080524011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,7 +250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b4e8dd7c026814f9c266ac86801061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  compoundTableReference: {fileID: 0}
   compound: 119
 --- !u!1 &3088230157265058474
 GameObject:
@@ -295,7 +310,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b0f2f0e8ec094bf4682c9c0d87230707, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -389,7 +404,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b0f2f0e8ec094bf4682c9c0d87230707, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
