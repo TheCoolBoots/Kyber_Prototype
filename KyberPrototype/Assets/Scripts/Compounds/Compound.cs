@@ -6,7 +6,6 @@ namespace Kyber
 {
     public class Compound : MonoBehaviour
     {
-        public float modelScale = .95f;
         public GameObject compoundTableReference;
         public CompoundIDs compound = CompoundIDs.PureWater;
 
@@ -20,20 +19,29 @@ namespace Kyber
         private void Start()
         {
             // need to research if this method of getting a reference to a dictionary is efficient or not
-            compoundTableRef = compoundTableReference.GetComponent<CompoundTable>().compoundTable;
+            /*compoundTableRef = compoundTableReference.GetComponent<CompoundTable>().compoundTable;
 
             if(compoundTableRef == null)
             {
                 Debug.LogError("ERROR: CompoundTable not found in given Table Reference");
                 return;
+            }*/
+
+            // need to research if this method of getting a reference to a dictionary is efficient or not
+            compoundTableRef = GameObject.Find("CompoundDatabase").GetComponent<CompoundTable>().compoundTable;
+
+            if (compoundTableRef == null)
+            {
+                Debug.LogError("ERROR: Create a game object with the name CompoundDatabase and add the CompoundTable script to it");
+                return;
             }
-            compoundTableRef.TryGetValue(compound, out CompoundData tmp);
-            if(tmp == null)
+
+            compoundTableRef.TryGetValue(compound, out compoundData);
+            if(compoundData == null)
             {
                 Debug.LogError($"ERROR: Compound ID:{ compound } not found in Compound Table");
                 return;
             }
-            compoundData = tmp;
 
             GameObject prefab = Resources.Load(compoundData.resourceFilepath) as GameObject;
             if(prefab == null)
@@ -41,8 +49,11 @@ namespace Kyber
                 Debug.LogError($"ERROR: Prefab ID:{ compound } not found at given resourceFilepath");
                 return;
             }
+
             compoundModel = Instantiate(Resources.Load(compoundData.resourceFilepath) as GameObject, transform);
-            compoundModel.transform.localScale = new Vector3(modelScale, modelScale, modelScale);
+            // Debug.Log($"Resource Filepath: {compoundData.resourceFilepath}\tPrefab Name: {compoundModel.name}");
+            compoundModel.transform.localScale = new Vector3(compoundData.modelScale, compoundData.modelScale, compoundData.modelScale);
+            
 
 
 
