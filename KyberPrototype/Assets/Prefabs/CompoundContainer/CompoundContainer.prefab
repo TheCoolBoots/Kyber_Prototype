@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 4600787032358219150}
   - component: {fileID: 8370016301068140665}
   - component: {fileID: 4712657758934334699}
-  - component: {fileID: 2888673089498076954}
-  - component: {fileID: 3173880706883826249}
-  - component: {fileID: 2219229663385530520}
-  - component: {fileID: 5562472748080524011}
+  - component: {fileID: 8338747324593960206}
+  - component: {fileID: 3683450616793262059}
+  - component: {fileID: 4886418119062488850}
+  - component: {fileID: 1182972451625432692}
   m_Layer: 0
   m_Name: CompoundContainer
   m_TagString: Untagged
@@ -117,7 +117,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2888673089498076954
+--- !u!114 &8338747324593960206
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,7 +169,7 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
---- !u!114 &3173880706883826249
+--- !u!114 &3683450616793262059
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -184,7 +184,7 @@ MonoBehaviour:
   attachmentFlags: 84
   attachmentOffset: {fileID: 0}
   catchingSpeedThreshold: -1
-  releaseVelocityStyle: 2
+  releaseVelocityStyle: 1
   releaseVelocityTimeOffset: -0.011
   scaleReleaseVelocity: 1.1
   scaleReleaseVelocityThreshold: -1
@@ -223,7 +223,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   interactable: {fileID: 0}
---- !u!114 &2219229663385530520
+--- !u!114 &4886418119062488850
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,7 +238,7 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
---- !u!114 &5562472748080524011
+--- !u!114 &1182972451625432692
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -262,7 +262,6 @@ GameObject:
   - component: {fileID: 8376205014329169504}
   - component: {fileID: 3028021118885684522}
   - component: {fileID: 2100694674747159551}
-  - component: {fileID: 4202027293382708570}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -331,20 +330,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &4202027293382708570
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3088230157265058474}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &8810367324958942939
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +341,6 @@ GameObject:
   - component: {fileID: 2792399622414412150}
   - component: {fileID: 3736401102887821727}
   - component: {fileID: 2208561960832876637}
-  - component: {fileID: 194001633507377125}
   m_Layer: 0
   m_Name: Cylinder (1)
   m_TagString: Untagged
@@ -425,17 +409,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &194001633507377125
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8810367324958942939}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}

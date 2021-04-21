@@ -17,14 +17,6 @@ namespace Kyber
 
         private void Start()
         {
-            // need to research if this method of getting a reference to a dictionary is efficient or not
-            /*compoundTableRef = compoundTableReference.GetComponent<CompoundTable>().compoundTable;
-
-            if(compoundTableRef == null)
-            {
-                Debug.LogError("ERROR: CompoundTable not found in given Table Reference");
-                return;
-            }*/
 
             // need to research if this method of getting a reference to a dictionary is efficient or not
             compoundTableRef = GameObject.Find("CompoundDatabase").GetComponent<CompoundTable>().compoundTable;

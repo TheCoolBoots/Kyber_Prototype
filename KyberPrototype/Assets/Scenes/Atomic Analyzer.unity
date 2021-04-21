@@ -317,6 +317,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!4 &872453042 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 259393719590989426, guid: 122f7fc1754dc3247a713a16505443b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2085073507}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1475183059
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,6 +643,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1159865649563312304, guid: 122f7fc1754dc3247a713a16505443b7,
+        type: 3}
+      propertyPath: snapPoint
+      value: 
+      objectReference: {fileID: 872453042}
+    - target: {fileID: 1159865649563312304, guid: 122f7fc1754dc3247a713a16505443b7,
+        type: 3}
+      propertyPath: canisterShadowPrefab
+      value: 
+      objectReference: {fileID: 343393469658484672, guid: ac5a51704ea880a429263a02f8bd4b5d,
+        type: 3}
     - target: {fileID: 1383306939685596669, guid: 122f7fc1754dc3247a713a16505443b7,
         type: 3}
       propertyPath: m_Layer
