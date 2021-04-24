@@ -2,68 +2,98 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
-using Kyber;
 
-public class AnalyzerPedestal : MonoBehaviour
+namespace Kyber
 {
-    public GameObject canisterShadowPrefab;
-    public Transform snapPoint;
-
-    private Interactable canisterInteractible;
-    private GameObject canisterShadow;
-    private void Start()
+    public class AnalyzerPedestal : MonoBehaviour
     {
-        if(canisterShadowPrefab != null)
-        {
-            canisterShadow = Instantiate(canisterShadowPrefab, snapPoint);
-            canisterShadow.SetActive(false);
-        }
-        else
-        {
-            Debug.LogError("Forgot to assign canisterShadow to something");
-        }
-    }
+        public GameObject canisterShadowPrefab;
+        public Transform snapPoint;
 
-    private void OnTriggerStay(Collider other)
-    {
-        
-        Compound otherCompound = other.gameObject.GetComponent<Compound>();
-        if (otherCompound != null)
+        [HideInInspector]
+        public GameObject currentCanister;
+        [HideInInspector]
+        public bool pedestalOccupied = false;
+
+        private GameObject canisterShadow;
+        private void Start()
         {
-            canisterInteractible = other.gameObject.GetComponent<Interactable>();
-            if (canisterInteractible.attachedToHand)
+            if (canisterShadowPrefab != null)
             {
-                other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                canisterShadow.SetActive(true);
+                canisterShadow = Instantiate(canisterShadowPrefab, snapPoint);
+                canisterShadow.SetActive(false);
             }
-            else if(canisterShadow.activeSelf)
+            else
+            {
+                Debug.LogError("Forgot to assign canisterShadow to something");
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (!pedestalOccupied)
             {
                 canisterShadow.SetActive(false);
-                other.gameObject.transform.position = snapPoint.position;
-                other.gameObject.transform.rotation = snapPoint.rotation;
-
-                other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             }
         }
-        // Debug.Log($"Other collider name: {other.gameObject.name}");
+
+        private void OnTriggerStay(Collider other)
+        {
+            if (!pedestalOccupied && IsValidCanister(other))
+            {
+                Interactable otherInteractable = other.GetComponent<Interactable>();
+
+                if (otherInteractable.attachedToHand)
+                {
+                    canisterShadow.SetActive(true);
+                }
+                else
+                {
+                    EngageCanister(other);
+                }
+            }
+            else if(pedestalOccupied && currentCanister.GetComponent<Interactable>().attachedToHand)
+            {
+                DisengageCanister(currentCanister);
+            }
+
+        }
+
+        private void EngageCanister(Collider other)
+        {
+            canisterShadow.SetActive(false);
+            other.gameObject.transform.position = snapPoint.position;
+            other.gameObject.transform.rotation = snapPoint.rotation;
+            other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            pedestalOccupied = true;
+            currentCanister = other.gameObject;
+        }
+
+        private void DisengageCanister(GameObject canister)
+        {
+            canisterShadow.SetActive(true);
+            canister.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            pedestalOccupied = false;
+        }
+
+        private bool IsValidCanister(Collider other)
+        {
+            return (other.gameObject.GetComponent<Interactable>() != null && other.gameObject.GetComponent<Compound>() != null);
+        }
+
+        public CompoundData GetCurrentCanisterData()
+        {
+            if (pedestalOccupied)
+            {
+                return currentCanister.GetComponent<Compound>().compoundData;
+            }
+            else
+            {
+                Debug.LogError("ERROR: No compound on pedestal");
+                return null;
+            }
+        }
+
     }
-
-    private void OnTriggerExit(Collider other)
-    {
-        canisterShadow.SetActive(false);
-        canisterInteractible = null;
-    }
-
-
-    /*
-
-    if object colliding is compoundCanister
-        if hand is attatched && shadow is uninstantiated
-            create shadow
-        else if hand is not attached
-            if shadow exists
-                kill shadow
-            snap canister to snap point       
-
-    */
 }
+
