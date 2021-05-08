@@ -260,7 +260,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2484892177168871267}
   m_LocalRotation: {x: 0.3535534, y: 0.61237246, z: -0.35355344, w: 0.6123724}
-  m_LocalPosition: {x: 0.12951, y: 0.233, z: 0.098581}
+  m_LocalPosition: {x: 0.12951, y: 0.233, z: 0.111}
   m_LocalScale: {x: 0.020520665, y: 0.018657703, z: 0.014935798}
   m_Children: []
   m_Father: {fileID: 6921183751001206848}
@@ -381,7 +381,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canisterPedestal: {fileID: 5792567732052504665}
-  atomSpawnerPrefab: {fileID: 0}
+  atomSpawnerPrefab: {fileID: 6454654794764177544, guid: 063e32358a40428428e1c05292ac1bbe,
+    type: 3}
   spawnPoint: {fileID: 3016859985526902582}
   spawnerSpacing: 0
   active: 0

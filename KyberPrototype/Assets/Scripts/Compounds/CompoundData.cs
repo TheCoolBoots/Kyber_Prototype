@@ -18,7 +18,7 @@ namespace Kyber
         public float modelScale { get; set; }
         public string atomComponents { get; set; }
 
-        public CompoundData(States state, string commonName, double density, double volume, bool stable, 
+        public CompoundData(States state, string commonName, double density, double volume, bool stable,
             string chemicalFormula, string resourceFilepath, float modelScale, string atomComponents)
         {
             this.state = state;
@@ -29,9 +29,8 @@ namespace Kyber
             this.chemicalFormula = chemicalFormula;
             this.resourceFilepath = resourceFilepath;
             this.modelScale = modelScale;
-            this.atomComponents = atomComponents;
+            this.atomComponents = atomComponents; // H2O: "H O", CH4 "C H"
         }
     }
- 
 }
 

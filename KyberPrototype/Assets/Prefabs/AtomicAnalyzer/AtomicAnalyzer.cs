@@ -35,15 +35,21 @@ namespace Kyber
             }
         }
 
+
         public void AnalyzeCompound()
         {
             if (analyzerEnabled && analyzerPedestal.pedestalOccupied)
             {
                 // send data to AnalyzerScreen and display it
-
                 ResetAnalyzer();
+
+                // retrieve data out of canister on pedestal
                 currentCompoundData = analyzerPedestal.currentCanister.GetComponent<Compound>().compoundData;
+
+                // using compound data, create spawners of specified elements
                 InitializeAtomSpawners();
+
+                // set active flag to true
                 active = true;
             }
             else
@@ -54,19 +60,24 @@ namespace Kyber
 
         private void InitializeAtomSpawners()
         {
-            string[] atoms = currentCompoundData.atomComponents.Split(' ');
+            string[] atoms = currentCompoundData.atomComponents.Split(' '); // "H O" -> ["H", "O"]
+
+
+            // for each element in the atomComponents list, create an atom spawner
             for (int i = 0; i < atoms.Length; i++)
             {
                 GameObject spawner = Instantiate(atomSpawnerPrefab);
                 spawner.GetComponent<AtomSpawner>().elementCharacter = atoms[i];
                 spawner.GetComponent<AtomSpawner>().parent = spawnPoint;
+
+                // space out each atom spawner with spawnerSpacing between them
                 spawner.GetComponent<AtomSpawner>().spawnPosition = new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z + i * spawnerSpacing);
                 spawner.GetComponent<AtomSpawner>().ActivateSpawner();
                 currentAtoms.Add(spawner);
             }
         }
 
-
+        // delete all active atom spawners and set active to false
         public void ResetAnalyzer()
         {
             foreach (GameObject spawner in currentAtoms)

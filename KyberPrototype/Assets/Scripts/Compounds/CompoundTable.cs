@@ -31,6 +31,13 @@ namespace Kyber
             // compoundTable.Add(CompoundIDs.C, new CompoundData(States.Solid, "Carbon", .1, 300, true, "C(1)"));
             // compoundTable.Add(CompoundIDs.N, new CompoundData(States.Gas, "Nitrogen Gas", .02, 300, true, "N(1)"));
             compoundTable.Add(CompoundIDs.PureWater, new CompoundData(States.Liquid, "Water", 1.0, 1.0, true, "H2O", "WaterSphere", .95f, "H O"));
+
+
+            // list templist [1,3,4,5,6,7]
+            // dictionary tempdict { "hi":1, "bye":2, "Jean":3 }
+
+            // compoundTable.TryGetValue(CompoundIDs.H, out CompoundData tmp);
+            // print(tmp.commonName);
         }
     }
 }
