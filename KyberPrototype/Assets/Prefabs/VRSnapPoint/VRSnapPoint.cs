@@ -13,7 +13,6 @@ namespace Kyber
         public float colliderRadius = .5f;
         public Material colliderBoundsMaterial;
         public bool snapPointOccipied = false;
-        public GameObject tempItemShadow;
 
         [HideInInspector]
         public GameObject currentSnappedItem;
