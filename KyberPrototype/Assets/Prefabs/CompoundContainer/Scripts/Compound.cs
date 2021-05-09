@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Kyber
 {
     public class Compound : MonoBehaviour
     {
         public CompoundIDs compound = CompoundIDs.PureWater;
+        public TextMesh compoundLabel;
 
         [HideInInspector]
         public CompoundData compoundData;
@@ -41,6 +43,7 @@ namespace Kyber
                 return;
             }
 
+            compoundLabel.text = $"{compoundData.commonName}: {compoundData.state}";
             compoundModel = Instantiate(Resources.Load(compoundData.resourceFilepath) as GameObject, transform);
             // Debug.Log($"Resource Filepath: {compoundData.resourceFilepath}\tPrefab Name: {compoundModel.name}");
             compoundModel.transform.localScale = new Vector3(compoundData.modelScale, compoundData.modelScale, compoundData.modelScale);
