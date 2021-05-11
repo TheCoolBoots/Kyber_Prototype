@@ -7,7 +7,7 @@ namespace Kyber
 {
     public class Compound : MonoBehaviour
     {
-        public CompoundIDs compound = CompoundIDs.PureWater;
+        public CompoundIDs compound = CompoundIDs.Empty;
         public TextMesh compoundLabel;
 
         [HideInInspector]
@@ -29,26 +29,32 @@ namespace Kyber
                 return;
             }
 
-            compoundTableRef.TryGetValue(compound, out compoundData);
-            if(compoundData == null)
+
+            if(compound != CompoundIDs.Empty)
             {
-                Debug.LogError($"ERROR: Compound ID:{ compound } not found in Compound Table");
-                return;
-            }
+                compoundTableRef.TryGetValue(compound, out compoundData);
+                if (compoundData == null)
+                {
+                    Debug.LogError($"ERROR: Compound ID:{ compound } not found in Compound Table");
+                    return;
+                }
 
-            GameObject prefab = Resources.Load(compoundData.resourceFilepath) as GameObject;
-            if(prefab == null)
+                GameObject prefab = Resources.Load(compoundData.resourceFilepath) as GameObject;
+                if (prefab == null)
+                {
+                    Debug.LogError($"ERROR: Prefab ID:{ compound } not found at given resourceFilepath");
+                    return;
+                }
+
+                compoundLabel.text = $"{compoundData.commonName}: {compoundData.state}";
+                compoundModel = Instantiate(Resources.Load(compoundData.resourceFilepath) as GameObject, transform);
+                // Debug.Log($"Resource Filepath: {compoundData.resourceFilepath}\tPrefab Name: {compoundModel.name}");
+                compoundModel.transform.localScale = new Vector3(compoundData.modelScale, compoundData.modelScale, compoundData.modelScale);
+            }
+            else
             {
-                Debug.LogError($"ERROR: Prefab ID:{ compound } not found at given resourceFilepath");
-                return;
+                compoundLabel.text = "";
             }
-
-            compoundLabel.text = $"{compoundData.commonName}: {compoundData.state}";
-            compoundModel = Instantiate(Resources.Load(compoundData.resourceFilepath) as GameObject, transform);
-            // Debug.Log($"Resource Filepath: {compoundData.resourceFilepath}\tPrefab Name: {compoundModel.name}");
-            compoundModel.transform.localScale = new Vector3(compoundData.modelScale, compoundData.modelScale, compoundData.modelScale);
-            
-
 
 
             // LATER ON:
@@ -56,7 +62,6 @@ namespace Kyber
             // decay if need be
             // add effects accordingly
         }
-
     }
 }
 

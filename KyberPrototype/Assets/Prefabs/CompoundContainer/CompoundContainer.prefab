@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 8376205014329169504}
   - component: {fileID: 3028021118885684522}
   - component: {fileID: 2100694674747159551}
+  - component: {fileID: 4043913191712620445}
   m_Layer: 0
   m_Name: TopCyl
   m_TagString: Untagged
@@ -332,6 +333,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4043913191712620445
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3088230157265058474}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &4860019242893424846
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,6 +451,7 @@ GameObject:
   - component: {fileID: 2792399622414412150}
   - component: {fileID: 3736401102887821727}
   - component: {fileID: 2208561960832876637}
+  - component: {fileID: 2309993578203598672}
   m_Layer: 0
   m_Name: BotCyl
   m_TagString: Untagged
@@ -504,3 +520,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2309993578203598672
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8810367324958942939}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
