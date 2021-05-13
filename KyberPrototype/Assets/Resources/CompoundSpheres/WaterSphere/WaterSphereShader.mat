@@ -97,5 +97,5 @@ Material:
     - _ZOffset3: 0
     - __dirty: 0
     m_Colors:
-    - _DirtColor: {r: 1, g: 1, b: 1, a: 0}
-    - _SpecularColor: {r: 1, g: 0.9522752, b: 0.79716986, a: 0}
+    - _DirtColor: {r: 0.4251958, g: 0.8027179, b: 0.990566, a: 0.09803922}
+    - _SpecularColor: {r: 0.9433962, g: 0.92186755, b: 0.6363475, a: 0}
