@@ -30,11 +30,11 @@ namespace Kyber
             compoundTable = new Dictionary<CompoundIDs, CompoundData>(100);
             // CompoundIDs compoundID, States state, string commonName, float density, float volume, bool stable, string chemicalFormula
             compoundTable.Add(CompoundIDs.H, new CompoundData(States.Gas, "Hydrogen", PLACEHOLDER, PLACEHOLDER, true, "H2", "CompoundSpheres/AirSphere/AirSphere", .4f, "H"));
-            compoundTable.Add(CompoundIDs.C, new CompoundData(States.Solid, "Graphite", PLACEHOLDER, PLACEHOLDER, true, "C", "CompoundSpheres/Graphite/Graphite", PLACEHOLDER, "C"));
+            compoundTable.Add(CompoundIDs.C, new CompoundData(States.Solid, "Graphite", PLACEHOLDER, PLACEHOLDER, true, "C", "CompoundSpheres/Graphite/Graphite", 3f, "C"));
             compoundTable.Add(CompoundIDs.N, new CompoundData(States.Gas, "Nitrogen", PLACEHOLDER, PLACEHOLDER, true, "N2", "CompoundSpheres/AirSphere/AirSphere", 1.0f, "N"));
             compoundTable.Add(CompoundIDs.O, new CompoundData(States.Gas, "Oxygen", PLACEHOLDER, PLACEHOLDER, true, "O2", "CompoundSpheres/AirSphere/AirSphere", 1.0f, "O"));
             compoundTable.Add(CompoundIDs.CarbonDioxide, new CompoundData(States.Gas, "Carbon Dioxide", PLACEHOLDER, PLACEHOLDER, true, "CO2", "CompoundSpheres/AirSphere/AirSphere", 1.0f, "C O"));
-            compoundTable.Add(CompoundIDs.PureWater, new CompoundData(States.Liquid, "Pure Water", PLACEHOLDER, PLACEHOLDER, true, "H2O", "CompoundSpheres/WaterSphere/WaterSphere", .95f, "H O"));
+            compoundTable.Add(CompoundIDs.PureWater, new CompoundData(States.Liquid, "Pure Water", PLACEHOLDER, PLACEHOLDER, true, "H2O", "CompoundSpheres/WaterSphere/WaterSphere", .8f, "H O"));
         }
     }
 }
