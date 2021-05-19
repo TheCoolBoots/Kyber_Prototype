@@ -440,7 +440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapAngle: 45
-  showTurnAnimation: 1
+  showTurnAnimation: 0
   snapTurnSource: {fileID: 1789211484887661511}
   rotateSound: {fileID: 8300000, guid: 973c016de5a1cf34ebb6b3477ca2da5c, type: 3}
   rotateRightFX: {fileID: 1870209118381834903}
@@ -452,7 +452,7 @@ MonoBehaviour:
     actionPath: /actions/default/in/SnapTurnRight
     needsReinit: 1
   fadeScreen: 1
-  fadeTime: 0.1
+  fadeTime: 0.3
   screenFadeColor: {r: 0, g: 0, b: 0, a: 1}
   distanceFromFace: 1.3
   additionalOffset: {x: 0, y: -0.3, z: 0}
