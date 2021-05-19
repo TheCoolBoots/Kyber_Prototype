@@ -83,10 +83,6 @@ namespace Kyber
 
         }
 
-        private void SetItemShadow(Collider other)
-        {
-            throw new NotImplementedException();
-        }
 
         private void EngageItem(Collider other)
         {

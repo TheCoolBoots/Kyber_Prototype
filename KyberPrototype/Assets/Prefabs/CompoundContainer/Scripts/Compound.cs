@@ -14,21 +14,21 @@ namespace Kyber
         public CompoundData compoundData;
 
         private GameObject compoundModel;
+        private GameObject compoundDatabaseGameObject;
         private Dictionary<CompoundIDs, CompoundData> compoundTableRef;
         
 
         private void Start()
         {
-
-            // need to research if this method of getting a reference to a dictionary is efficient or not
-            compoundTableRef = GameObject.Find("CompoundDatabase").GetComponent<CompoundTable>().compoundTable;
-
-            if (compoundTableRef == null)
+            compoundDatabaseGameObject = GameObject.Find("CompoundDatabase");
+            if (compoundDatabaseGameObject == null)
             {
                 Debug.LogError("ERROR: Create a game object with the name CompoundDatabase and add the CompoundTable script to it");
                 return;
             }
 
+            // need to research if this method of getting a reference to a dictionary is efficient or not
+            compoundTableRef = GameObject.Find("CompoundDatabase").GetComponent<CompoundTable>().compoundTable;
 
             if(compound != CompoundIDs.Empty)
             {
@@ -54,6 +54,7 @@ namespace Kyber
             else
             {
                 compoundLabel.text = "";
+                compoundData = null;
             }
 
 

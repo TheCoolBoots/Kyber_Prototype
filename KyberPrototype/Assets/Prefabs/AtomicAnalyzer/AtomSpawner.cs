@@ -29,10 +29,10 @@ namespace Kyber
                 Debug.LogError($"Atom Placeholder AtomPlaceholders/{ elementCharacter }atom not found");
             }
 
-            currentAtom = Instantiate(atomModel, parent);
+            currentAtom = Instantiate(atomModel, parent.parent);
             currentInteractable = currentAtom.GetComponent<Interactable>();
             currentAtom.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-            currentAtom.transform.position = spawnPosition;
+            currentAtom.transform.localPosition = spawnPosition;
 
             active = true;
         }

@@ -47,7 +47,8 @@ namespace Kyber
                 currentCompoundData = analyzerPedestal.currentCanister.GetComponent<Compound>().compoundData;
 
                 // using compound data, create spawners of specified elements
-                InitializeAtomSpawners();
+                if (currentCompoundData != null)
+                    InitializeAtomSpawners();
 
                 // set active flag to true
                 active = true;
@@ -71,7 +72,7 @@ namespace Kyber
                 spawner.GetComponent<AtomSpawner>().parent = spawnPoint;
 
                 // space out each atom spawner with spawnerSpacing between them
-                spawner.GetComponent<AtomSpawner>().spawnPosition = new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z + i * spawnerSpacing);
+                spawner.GetComponent<AtomSpawner>().spawnPosition = new Vector3(spawnPoint.localPosition.x, spawnPoint.localPosition.y, spawnPoint.localPosition.z - i * spawnerSpacing);
                 spawner.GetComponent<AtomSpawner>().ActivateSpawner();
                 currentAtoms.Add(spawner);
             }
@@ -82,7 +83,7 @@ namespace Kyber
         {
             foreach (GameObject spawner in currentAtoms)
             {
-                GameObject.Destroy(spawner);
+                Destroy(spawner);
             }
             currentAtoms = new List<GameObject>(5);
 

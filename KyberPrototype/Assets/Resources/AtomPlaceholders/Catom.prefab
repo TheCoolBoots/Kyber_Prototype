@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 93179460866838205}
   - component: {fileID: 230361911118237138}
   - component: {fileID: 5780462578105059786}
-  - component: {fileID: 177697057018133059}
-  - component: {fileID: -547372846252193632}
-  - component: {fileID: -1653571356548152184}
+  - component: {fileID: 3559976980937856315}
+  - component: {fileID: 6845392832583340350}
+  - component: {fileID: -6891009603407892784}
   m_Layer: 0
-  m_Name: Hatom
+  m_Name: Catom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1227266d796c9c04bb9a6124ce502ce7, type: 2}
+  - {fileID: 2100000, guid: 11815dac8d9a70b44acd33b0f15ffbcb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,7 +96,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &177697057018133059
+--- !u!114 &3559976980937856315
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,7 +148,7 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
---- !u!54 &-547372846252193632
+--- !u!54 &6845392832583340350
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,7 +164,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-1653571356548152184
+--- !u!114 &-6891009603407892784
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

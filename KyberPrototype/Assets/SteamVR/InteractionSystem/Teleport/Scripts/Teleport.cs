@@ -123,6 +123,8 @@ namespace Valve.VR.InteractionSystem
 		public static SteamVR_Events.Event< TeleportMarkerBase > PlayerPre = new SteamVR_Events.Event< TeleportMarkerBase >();
 		public static SteamVR_Events.Action< TeleportMarkerBase > PlayerPreAction( UnityAction< TeleportMarkerBase > action ) { return new SteamVR_Events.Action< TeleportMarkerBase >( PlayerPre, action ); }
 
+		public bool showTeleportHints = false;
+
 		//-------------------------------------------------
 		private static Teleport _instance;
 		public static Teleport instance
@@ -188,7 +190,11 @@ namespace Valve.VR.InteractionSystem
 
 			CheckForSpawnPoint();
 
-			Invoke( "ShowTeleportHint", 5.0f );
+            if (showTeleportHints)
+            {
+				Invoke("ShowTeleportHint", 5.0f);
+			}
+			
 		}
 
 
