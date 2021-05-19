@@ -5,15 +5,16 @@
 //=============================================================================
 
 using UnityEngine;
-using UnityEngine.Events;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace Valve.VR.InteractionSystem
 {
+    [RequireComponent(typeof(Kyber.OutlineController))]
+
     //-------------------------------------------------------------------------
     public class Interactable : MonoBehaviour
     {
+
         [Tooltip("Activates an action set on attach and deactivates on detach")]
         public SteamVR_ActionSet activateActionSetOnAttach;
 
@@ -55,7 +56,7 @@ namespace Valve.VR.InteractionSystem
         public SteamVR_Skeleton_Poser skeletonPoser;
 
         [Tooltip("Should the rendered hand lock on to and follow the object")]
-        public bool handFollowTransform= true;
+        public bool handFollowTransform = true;
 
 
         [Tooltip("Set whether or not you want this interactible to highlight when hovering over it")]
@@ -255,8 +256,8 @@ namespace Valve.VR.InteractionSystem
 
             if (highlightOnHover == true && wasHovering == false)
             {
-                CreateHighlightRenderers();
-                UpdateHighlightRenderers();
+                //CreateHighlightRenderers();
+                //UpdateHighlightRenderers();
             }
         }
 
@@ -274,8 +275,8 @@ namespace Valve.VR.InteractionSystem
             {
                 isHovering = false;
 
-                if (highlightOnHover && highlightHolder != null)
-                    Destroy(highlightHolder);
+                //if (highlightOnHover && highlightHolder != null)
+                //    Destroy(highlightHolder);
             }
         }
 
@@ -283,10 +284,10 @@ namespace Valve.VR.InteractionSystem
         {
             if (highlightOnHover)
             {
-                UpdateHighlightRenderers();
+                //UpdateHighlightRenderers();
 
-                if (isHovering == false && highlightHolder != null)
-                    Destroy(highlightHolder);
+                //if (isHovering == false && highlightHolder != null)
+                //    Destroy(highlightHolder);
             }
         }
 
