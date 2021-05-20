@@ -219,6 +219,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 482706565874726870, guid: a065a0478d8234045af460933ada5a54,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5145
+      objectReference: {fileID: 0}
+    - target: {fileID: 482706565874726870, guid: a065a0478d8234045af460933ada5a54,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5145
+      objectReference: {fileID: 0}
+    - target: {fileID: 482706565874726870, guid: a065a0478d8234045af460933ada5a54,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5145
+      objectReference: {fileID: 0}
+    - target: {fileID: 482706565874726870, guid: a065a0478d8234045af460933ada5a54,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.1525896
       objectReference: {fileID: 0}
@@ -2463,6 +2478,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: KyberPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 1871206928988365323, guid: 4e74ef11c129b30439652b5888053a45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1871206928988672627, guid: 4e74ef11c129b30439652b5888053a45,
         type: 3}
       propertyPath: m_RootOrder
@@ -2828,6 +2848,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 551448569a1916a4c91d7706d3219338, type: 3}
+--- !u!1 &1834316648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1834316650}
+  - component: {fileID: 1834316649}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1834316649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834316648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: aaabcfefdc2702d489c79ebddff09f97, type: 2}
+--- !u!4 &1834316650
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834316648}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.665198, y: -2.2188416, z: -12.519275}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1863642960
 GameObject:
   m_ObjectHideFlags: 0
