@@ -78,20 +78,12 @@ namespace Kyber
 
         private bool IsValidCanister(Collider other)
         {
-            return (other.gameObject.GetComponent<Interactable>() != null && other.gameObject.GetComponent<Compound>() != null);
+            return (other.gameObject.GetComponent<Interactable>() != null && other.gameObject.GetComponent<CanisterContent>() != null);
         }
 
-        public CompoundData GetCurrentCanisterData()
+        public CanisterContentData GetCurrentCanisterData()
         {
-            if (pedestalOccupied)
-            {
-                return currentCanister.GetComponent<Compound>().compoundData;
-            }
-            else
-            {
-                Debug.LogError("ERROR: No compound on pedestal");
-                return null;
-            }
+            return pedestalOccupied ? currentCanister.GetComponent<CanisterContent>()._data : null;
         }
 
     }

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7116896d73fb81a498b417ef10e996e5, type: 3}
+  m_Name: WaterData
+  m_EditorClassIdentifier: 
+  commonName: Water
+  state: 1
+  density: 1
+  volume: 1
+  chemicalFormula: H2O
+  componentAtoms: H O
+  basePrefab: {fileID: 4281328415731335403, guid: 934ba1e5af8f20d4a89d1d427665aefa,
+    type: 3}
+  gradientScale: 2
+  tilingSpeed: 0.4
+  displacementScale: 0.05
+  fresnelPower: 3
+  indexOfRefraction: 0.05
+  tint: {r: 0.31461376, g: 0.5514754, b: 0.6603774, a: 0.3882353}
+  emissionColor: {r: 0, g: 0, b: 0, a: 0}

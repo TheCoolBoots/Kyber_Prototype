@@ -108,9 +108,9 @@ GameObject:
   - component: {fileID: 856486918738546767}
   - component: {fileID: 3468135908440978143}
   - component: {fileID: 7363653390103044389}
-  - component: {fileID: 6919980719264844066}
   - component: {fileID: 3157074811986679832}
   - component: {fileID: 8933035780774976443}
+  - component: {fileID: 2104869040751709519}
   m_Layer: 0
   m_Name: CompoundCanister
   m_TagString: Untagged
@@ -318,20 +318,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   interactable: {fileID: 0}
---- !u!114 &6919980719264844066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3917668370235297762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6b4e8dd7c026814f9c266ac86801061, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  compound: 0
-  compoundLabel: {fileID: 3999924053405179327}
 --- !u!114 &3157074811986679832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,6 +348,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c098a96c719eded47b12bbc17d95a7cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2104869040751709519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3917668370235297762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62192e4f290ca24f8cb2e812205bc5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data: {fileID: 0}
+  label: {fileID: 3999924053405179327}
+  commonName: 
+  state: 0
+  density: 0
+  volume: 0
+  chemicalFormula: 
+  componentAtoms: 
 --- !u!1 &4423317766667826344
 GameObject:
   m_ObjectHideFlags: 0

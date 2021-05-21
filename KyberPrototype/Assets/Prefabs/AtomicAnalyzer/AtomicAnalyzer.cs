@@ -17,7 +17,7 @@ namespace Kyber
         public bool analyzerEnabled = false;
 
         private AnalyzerPedestal analyzerPedestal;
-        private CompoundData currentCompoundData;
+        private CanisterContentData currentCompoundData;
         private List<GameObject> currentAtoms;
 
         private void Start()
@@ -44,7 +44,7 @@ namespace Kyber
                 ResetAnalyzer();
 
                 // retrieve data out of canister on pedestal
-                currentCompoundData = analyzerPedestal.currentCanister.GetComponent<Compound>().compoundData;
+                currentCompoundData = analyzerPedestal.currentCanister.GetComponent<CanisterContent>()._data;
 
                 // using compound data, create spawners of specified elements
                 if (currentCompoundData != null)
@@ -61,8 +61,7 @@ namespace Kyber
 
         private void InitializeAtomSpawners()
         {
-            string[] atoms = currentCompoundData.atomComponents.Split(' '); // "H O" -> ["H", "O"]
-
+            string[] atoms = currentCompoundData.componentAtoms.Split(' '); // "H O" -> ["H", "O"]
 
             // for each element in the atomComponents list, create an atom spawner
             for (int i = 0; i < atoms.Length; i++)
