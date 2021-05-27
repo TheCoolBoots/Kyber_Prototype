@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Kyber
 {
+    [CreateAssetMenu(fileName = "AtomData", menuName = "Atom Data")]
     public class AtomData : ScriptableObject
     {
         public string scientificName;

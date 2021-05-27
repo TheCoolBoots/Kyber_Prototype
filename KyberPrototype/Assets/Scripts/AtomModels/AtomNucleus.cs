@@ -5,7 +5,6 @@ using UnityEditor;
 using Valve.VR.InteractionSystem;
 
 
-[RequireComponent(typeof(Rigidbody))]
 public class AtomNucleus : MonoBehaviour
 {
     [Header("Proton/Neutron resource filepaths")]
@@ -16,7 +15,7 @@ public class AtomNucleus : MonoBehaviour
     public int atomicNumber = 1;
     public int massNumber = 1;
     public float strongForce = 100f;
-    public float inertia = 1f;
+    public float inertia = 5f;
 
     [Header("Size")]
     public float nucleusDiameter = .1f;
@@ -26,11 +25,11 @@ public class AtomNucleus : MonoBehaviour
     private float componentScale;
 
     private float[] packingEfficiency = { 0f, 1f, .25f, .29988f, .36326f, .35533f, .4264f, .40213f, .43217f, .44134f, .44005f, .45003f, .49095f };
+    private List<GameObject> components = new List<GameObject>();
 
-
-    // Start is called before the first frame update
-    void Start()
+    public void InitializeAtomNucleus()
     {
+        // buffer needed b/c components poke out of barrier sometimes; packing efficiency not always perfect
         transform.localScale = new Vector3(nucleusDiameter + nucleusDiameterBuffer, nucleusDiameter + nucleusDiameterBuffer, nucleusDiameter + nucleusDiameterBuffer);
         componentScale = CalculateProtonNeutronRadius();
         SpawnNucleusComponents();
@@ -53,7 +52,8 @@ public class AtomNucleus : MonoBehaviour
         {
             numNeutrons = massNumber - atomicNumber;
 
-            int currentNumProtons = 0, currentNumNeutrons = 0;
+            // alternate creating a proton and a neutron may induce more randomness
+            /*int currentNumProtons = 0, currentNumNeutrons = 0;
             while (currentNumProtons < atomicNumber || currentNumNeutrons < numNeutrons)
             {
                 if (currentNumNeutrons < numNeutrons)
@@ -68,6 +68,16 @@ public class AtomNucleus : MonoBehaviour
                     currentNumProtons++;
                     AddElementToNucleus(proton);
                 }
+            }*/
+
+            int currentNumProtons = 0, currentNumNeutrons = 0;
+            for (currentNumNeutrons = 0; currentNumNeutrons < numNeutrons; currentNumNeutrons++)
+            {
+                AddElementToNucleus(neutron);
+            }
+            for (currentNumProtons = 0; currentNumProtons < numNeutrons; currentNumProtons++)
+            {
+                AddElementToNucleus(proton);
             }
         }
     }
@@ -76,6 +86,8 @@ public class AtomNucleus : MonoBehaviour
     {
         // Debug.Log(transform.localScale);
         // Debug.Log(Mathf.Pow(.49365f / massNumber, (1f / 3f)));
+
+        // estimate the ideal radius of protons/neutrons to perfectly fit inside nucleus
         float packingEfficiencyVal = .56f;
         if (massNumber <= 12)
             packingEfficiencyVal = packingEfficiency[massNumber];
@@ -90,15 +102,27 @@ public class AtomNucleus : MonoBehaviour
         newParticle.GetComponent<Rigidbody>().angularDrag = inertia;
         newParticle.GetComponent<Rigidbody>().useGravity = false;
         newParticle.GetComponent<Transform>().localScale = new Vector3(componentScale, componentScale, componentScale);
+        // layer 10 ignore all collisions with anything besides things on layer 10 
+        newParticle.gameObject.layer = 10;
 
+        // use a spring joint to simulate strong force (force of particles)
         SpringJoint sj = gameObject.AddComponent(typeof(SpringJoint)) as SpringJoint;
         sj.anchor = transform.position;
         sj.connectedBody = newParticle.GetComponent<Rigidbody>();
         sj.anchor = Vector3.zero;
         sj.connectedAnchor = Vector3.zero;
         sj.spring = strongForce;
-        sj.damper = inertia;
+        sj.damper = 0;
 
+        // make initial position somewhat random for physics system to assign final positions
         newParticle.GetComponent<Transform>().localPosition = new Vector3(Random.value * .02f - .01f, Random.value * .02f - .01f, Random.value * .02f - .01f);
+        components.Add(newParticle);
+    }
+
+    public void SetAllToKinematic(bool kinematic)
+    {
+        foreach (GameObject obj in components){
+            obj.GetComponent<Rigidbody>().isKinematic = kinematic;
+        }
     }
 }

@@ -22,6 +22,10 @@ namespace Kyber
         public ElectronOrbitalData(int numElectrons)
         {
             orbitalData = new List<ElectronOrbital>(fillOrder.Length);
+
+            if(numElectrons < 0)
+                throw new ArgumentOutOfRangeException("number of electrons must be greater or equal to zero");
+
             PopulateOrbitalList(numElectrons);
 
         }
@@ -55,9 +59,9 @@ namespace Kyber
             }
         }
 
-        private void AddOrbitalToList(ElectronOrbital currentOrbital, int remainingElectrons, int threshold)
+        private void AddOrbitalToList(ElectronOrbital currentOrbital, int remainingElectrons, int maxElectrons)
         {
-            if (remainingElectrons <= threshold)
+            if (remainingElectrons <= maxElectrons)
             {
                 currentOrbital.numElectrons = remainingElectrons;
                 currentElectrons += remainingElectrons;
@@ -65,8 +69,8 @@ namespace Kyber
             }
             else
             {
-                currentOrbital.numElectrons = threshold;
-                currentElectrons += threshold;
+                currentOrbital.numElectrons = maxElectrons;
+                currentElectrons += maxElectrons;
                 orbitalData.Add(currentOrbital);
             }
         }
@@ -125,9 +129,14 @@ namespace Kyber
             return electronData;
         }
 
-        public void main()
+        public int[] GetBhorModelData()
         {
-            Console.WriteLine(GenerateOrbitalData(1, 2));
+            int[] electronData = { 0, 0, 0, 0, 0, 0, 0 };
+            foreach(ElectronOrbital orbital in orbitalData)
+            {
+                electronData[orbital.energyLevel - 1] += orbital.numElectrons;
+            }
+            return electronData;
         }
     }
 }
