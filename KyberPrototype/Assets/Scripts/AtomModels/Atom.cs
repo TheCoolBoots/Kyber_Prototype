@@ -31,8 +31,27 @@ namespace Kyber
         private GameObject nucleus;
         private SphereCollider sphereCollider;
 
+        public bool waitToLoad = false;
+
 
         void Start()
+        {
+            if(atomData == null)
+            {
+                waitToLoad = true;
+            }
+        }
+
+        private void Update()
+        {
+            if (!waitToLoad)
+            {
+                LoadAtom();
+                waitToLoad = true;
+            }
+        }
+
+        public void LoadAtom()
         {
             sphereCollider = GetComponent<SphereCollider>();
 
@@ -48,13 +67,6 @@ namespace Kyber
             LoadBhorModel();
         }
 
-        private void Update()
-        {
-            // the nucleus for some reason does not like to stay put relative to the parent game object
-            // this is a temporary fix until I can find something more elegant
-            nucleus.transform.localPosition = Vector3.zero;
-        }
-
         private void LoadNucleus()
         {
             nucleus = Instantiate(nucleusPrefab, transform);
@@ -64,8 +76,8 @@ namespace Kyber
             reference.atomicNumber = atomData.atomicNumber;
             reference.massNumber = atomData.massNumber;
 
-            // make the radius an arbitrary 16th the size of the whole model
-            reference.nucleusDiameter = outerDiameter/16;
+            // make the radius an arbitrary 20th the size of the whole model
+            reference.nucleusDiameter = outerDiameter/30;
 
             reference.InitializeAtomNucleus();
         }

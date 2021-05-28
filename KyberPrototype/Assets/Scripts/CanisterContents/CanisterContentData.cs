@@ -21,6 +21,7 @@ namespace Kyber
         public string chemicalFormula;
         public string componentAtoms;
 
+        [Tooltip("Solids: a prefab of the model of that solid\nLiquids: the LiquidSphere prefab\nGasses: the EmissionLampBase prefab")]
         public GameObject basePrefab;
 
         // for liquids

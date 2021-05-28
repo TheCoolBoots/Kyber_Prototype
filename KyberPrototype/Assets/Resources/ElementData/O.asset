@@ -10,11 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bc1f56e6d9f7554aa70b5edd84a990a, type: 3}
-  m_Name: Carbon
+  m_Name: O
   m_EditorClassIdentifier: 
-  scientificName: Carbon
-  atomicNumber: 6
-  massNumber: 12
-  atomicMass: 12.011
-  isotopes: 
+  scientificName: Oxygen
+  atomicNumber: 8
+  massNumber: 16
   charge: 0

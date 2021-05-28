@@ -63,11 +63,13 @@ public class BhorModelRing : MonoBehaviour
             {
                 if(i < 4)
                 {
-                    electrons[i].transform.localPosition = new Vector3(Mathf.Cos(angleBetweenElectrons * i), 0, Mathf.Sin(angleBetweenElectrons * i)) * ringRadius;
+                    electrons[i].transform.localPosition = new Vector3(Mathf.Cos((angleBetweenElectrons * i) - (Mathf.PI / 12)), 0, 
+                        Mathf.Sin((angleBetweenElectrons * i) - (Mathf.PI / 12))) * ringRadius;
                 }
                 else
                 {
-                    electrons[i].transform.localPosition = new Vector3(Mathf.Cos(angleBetweenElectrons * i + Mathf.PI/12), 0, Mathf.Sin(angleBetweenElectrons * i) + Mathf.PI / 12) * ringRadius;
+                    electrons[i].transform.localPosition = new Vector3(Mathf.Cos((angleBetweenElectrons * i) + (Mathf.PI / 12)), 0, 
+                        Mathf.Sin((angleBetweenElectrons * i) + (Mathf.PI / 12))) * ringRadius;
                 }
             }
         }

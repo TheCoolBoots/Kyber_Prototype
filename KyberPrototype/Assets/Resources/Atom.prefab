@@ -59,7 +59,8 @@ MonoBehaviour:
     type: 3}
   outerDiameter: 1
   electronSpeed: 50
-  electronScale: 0.01
+  electronScale: 0.003
+  waitToLoad: 0
 --- !u!135 &1891933900350497428
 SphereCollider:
   m_ObjectHideFlags: 0

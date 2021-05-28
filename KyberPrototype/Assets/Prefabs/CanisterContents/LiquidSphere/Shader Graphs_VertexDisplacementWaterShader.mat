@@ -23,9 +23,9 @@ Material:
     m_Floats:
     - _Alpha: 0.216
     - _DisplacementScale: 0.05
-    - _FresnelPower: 3
+    - _FresnelPower: 2.42
     - _GradientScale: 2
-    - _IOR: 0.05
+    - _IOR: 0.02
     - _Metallic: 0
     - _Smoothness: 0.5
     - _TilingSpeed: 0.4

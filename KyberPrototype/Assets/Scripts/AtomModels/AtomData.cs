@@ -10,8 +10,6 @@ namespace Kyber
         public string scientificName;
         public int atomicNumber;
         public int massNumber;
-        public float atomicMass;
-        public List<int> isotopes;
         public int charge;
     }
 }

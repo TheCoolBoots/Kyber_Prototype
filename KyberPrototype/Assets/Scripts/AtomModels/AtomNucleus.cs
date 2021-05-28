@@ -19,17 +19,18 @@ public class AtomNucleus : MonoBehaviour
 
     [Header("Size")]
     public float nucleusDiameter = .1f;
-    public float nucleusDiameterBuffer = .03f;
+    public float nucleusDiameterBuffer;
 
     private int numNeutrons;
     private float componentScale;
 
-    private float[] packingEfficiency = { 0f, 1f, .25f, .29988f, .36326f, .35533f, .4264f, .40213f, .43217f, .44134f, .44005f, .45003f, .49095f };
+    private float[] packingEfficiency = { 0f, 1f, .25f, .29988f, .36326f, .35533f, .4264f };
     private List<GameObject> components = new List<GameObject>();
 
     public void InitializeAtomNucleus()
     {
         // buffer needed b/c components poke out of barrier sometimes; packing efficiency not always perfect
+        nucleusDiameterBuffer = nucleusDiameter * .1f;
         transform.localScale = new Vector3(nucleusDiameter + nucleusDiameterBuffer, nucleusDiameter + nucleusDiameterBuffer, nucleusDiameter + nucleusDiameterBuffer);
         componentScale = CalculateProtonNeutronRadius();
         SpawnNucleusComponents();
@@ -75,8 +76,9 @@ public class AtomNucleus : MonoBehaviour
             {
                 AddElementToNucleus(neutron);
             }
-            for (currentNumProtons = 0; currentNumProtons < numNeutrons; currentNumProtons++)
+            for (currentNumProtons = 0; currentNumProtons < atomicNumber; currentNumProtons++)
             {
+                Debug.Log(atomicNumber + " " + currentNumProtons);
                 AddElementToNucleus(proton);
             }
         }
@@ -88,8 +90,8 @@ public class AtomNucleus : MonoBehaviour
         // Debug.Log(Mathf.Pow(.49365f / massNumber, (1f / 3f)));
 
         // estimate the ideal radius of protons/neutrons to perfectly fit inside nucleus
-        float packingEfficiencyVal = .56f;
-        if (massNumber <= 12)
+        float packingEfficiencyVal = .5f;
+        if (massNumber <= 6)
             packingEfficiencyVal = packingEfficiency[massNumber];
         return Mathf.Pow(packingEfficiencyVal / massNumber, (1f / 3f));
     }
@@ -113,6 +115,7 @@ public class AtomNucleus : MonoBehaviour
         sj.connectedAnchor = Vector3.zero;
         sj.spring = strongForce;
         sj.damper = 0;
+        sj.tolerance = 0;
 
         // make initial position somewhat random for physics system to assign final positions
         newParticle.GetComponent<Transform>().localPosition = new Vector3(Random.value * .02f - .01f, Random.value * .02f - .01f, Random.value * .02f - .01f);

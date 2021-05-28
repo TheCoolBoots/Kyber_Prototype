@@ -48,10 +48,13 @@ namespace Kyber
 
                 // using compound data, create spawners of specified elements
                 if (currentCompoundData != null)
+                {
                     InitializeAtomSpawners();
 
-                // set active flag to true
-                active = true;
+                    // set active flag to true
+                    active = true;
+                }
+
             }
             else
             {

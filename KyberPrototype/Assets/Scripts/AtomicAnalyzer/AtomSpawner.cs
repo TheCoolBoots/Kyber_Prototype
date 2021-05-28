@@ -7,6 +7,7 @@ namespace Kyber
 { 
     public class AtomSpawner : MonoBehaviour
     {
+
         [HideInInspector]
         public string elementCharacter;
         [HideInInspector]
@@ -17,22 +18,24 @@ namespace Kyber
         private GameObject atomModel;
         private GameObject currentAtom;
         private Interactable currentInteractable;
+        private AtomData atomData;
 
         public bool active = false;
 
 
         public void ActivateSpawner()
         {
-            this.atomModel = Resources.Load($"AtomPlaceholders/{ elementCharacter }atom") as GameObject;
+            atomModel = Resources.Load($"Atom") as GameObject;
             if (!this.atomModel)
             {
-                Debug.LogError($"Atom Placeholder AtomPlaceholders/{ elementCharacter }atom not found");
+                Debug.LogError($"Atom prefab not found in /Resources");
+                return;
             }
 
-            currentAtom = Instantiate(atomModel, parent.parent);
-            currentInteractable = currentAtom.GetComponent<Interactable>();
+            atomData = Resources.Load($"ElementData/{elementCharacter}") as AtomData;
+            InstantiateNewAtom();
             currentAtom.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-            currentAtom.transform.localPosition = spawnPosition;
+            
 
             active = true;
         }
@@ -42,11 +45,19 @@ namespace Kyber
             if (active && currentInteractable.attachedToHand)
             {
                 currentAtom.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                currentAtom = Instantiate(atomModel, parent);
-                currentInteractable = currentAtom.GetComponent<Interactable>();
+                InstantiateNewAtom();
                 currentAtom.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-                currentAtom.transform.position = spawnPosition;
             }
+        }
+
+        private void InstantiateNewAtom()
+        {
+            currentAtom = Instantiate(atomModel, parent.parent);
+            currentInteractable = currentAtom.GetComponent<Interactable>();
+            currentAtom.GetComponent<Atom>().atomData = atomData;
+            currentAtom.GetComponent<Atom>().outerDiameter = .3f;
+            currentAtom.GetComponent<Atom>().waitToLoad = false;
+            currentAtom.transform.localPosition = spawnPosition;
         }
 
         public void OnDestroy()

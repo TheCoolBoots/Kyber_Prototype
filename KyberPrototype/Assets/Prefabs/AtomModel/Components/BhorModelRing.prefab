@@ -46,6 +46,7 @@ MonoBehaviour:
   numElectrons: 0
   electronSpeed: 1
   ringRadius: 0.5
-  electronScale: 0.2
+  electronScale: 0.05
   orbiting: 1
   electronPrefab: {fileID: 0}
+  active: 0
