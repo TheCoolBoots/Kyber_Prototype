@@ -41,6 +41,8 @@ namespace Kyber
             if (analyzerEnabled && analyzerPedestal.pedestalOccupied)
             {
                 // send data to AnalyzerScreen and display it
+                /*    */
+
                 ResetAnalyzer();
 
                 // retrieve data out of canister on pedestal

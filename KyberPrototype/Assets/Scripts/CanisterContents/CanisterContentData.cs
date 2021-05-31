@@ -25,7 +25,8 @@ namespace Kyber
         public GameObject basePrefab;
 
         // for liquids
-        [Header("For Liquids Only")]
+        [Tooltip("Can leave these blank if compound is solid or gas")]
+        [Header("For Rendering Liquids")]
         public float gradientScale = 2f;
         public float tilingSpeed = .4f;
         public float displacementScale = .05f;
@@ -34,9 +35,22 @@ namespace Kyber
         public Color tint;
 
         // for gasses
-        [Header("For Gasses Only")]
+        [Tooltip("Can leave these blank if compound is solid or gas")]
+        [Header("For Rendering Gasses")]
         [ColorUsage(true, true)]
         public Color emissionColor;
+
+
+        [Header("Element Data")]
+        [Tooltip("The number of protons in the element")] // Jean, add tooltips like these to the rest of the entries
+        public int atomicNumber;
+        public int massNumber;
+        public float atomicMass;
+        public float electroNegativity;
+        public float atomicRadius;
+        public float ionizationEnergy;
+        public float meltingPoint;
+        public float boilingPoint;
 
     }
 }
