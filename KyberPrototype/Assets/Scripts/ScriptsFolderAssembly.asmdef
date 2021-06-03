@@ -2,7 +2,8 @@
     "name": "ScriptsFolderAssembly",
     "references": [
         "GUID:1fbf338ef6b952a448262a7ff7df5fe4",
-        "GUID:35b9c7a103b322f43805bf1744257ac7"
+        "GUID:35b9c7a103b322f43805bf1744257ac7",
+        "GUID:c81b59cbfc8588c489b360d4c7c45232"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
