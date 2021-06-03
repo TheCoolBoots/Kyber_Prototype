@@ -53,24 +53,6 @@ public class AtomNucleus : MonoBehaviour
         {
             numNeutrons = massNumber - atomicNumber;
 
-            // alternate creating a proton and a neutron may induce more randomness
-            /*int currentNumProtons = 0, currentNumNeutrons = 0;
-            while (currentNumProtons < atomicNumber || currentNumNeutrons < numNeutrons)
-            {
-                if (currentNumNeutrons < numNeutrons)
-                {
-                    //Debug.Log("Adding neutron");
-                    currentNumNeutrons++;
-                    AddElementToNucleus(neutron);
-                }
-                if (currentNumProtons < atomicNumber)
-                {
-                    //Debug.Log("Adding proton");
-                    currentNumProtons++;
-                    AddElementToNucleus(proton);
-                }
-            }*/
-
             int currentNumProtons = 0, currentNumNeutrons = 0;
             for (currentNumNeutrons = 0; currentNumNeutrons < numNeutrons; currentNumNeutrons++)
             {
@@ -78,7 +60,7 @@ public class AtomNucleus : MonoBehaviour
             }
             for (currentNumProtons = 0; currentNumProtons < atomicNumber; currentNumProtons++)
             {
-                Debug.Log(atomicNumber + " " + currentNumProtons);
+                // Debug.Log(atomicNumber + " " + currentNumProtons);
                 AddElementToNucleus(proton);
             }
         }
