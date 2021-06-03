@@ -14,8 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commonName: Nitrogen
   state: 2
-  density: 1
+  density: 0.0012506
   volume: 1
+  temperature: 293.15
+  meltingPoint: 63.15
+  boilingPoint: 77.36
+  sublimationPoint: 0
   chemicalFormula: N2
   componentAtoms: N
   basePrefab: {fileID: 3927279748623988451, guid: a065a0478d8234045af460933ada5a54,
@@ -27,3 +31,9 @@ MonoBehaviour:
   indexOfRefraction: 0.05
   tint: {r: 0, g: 0, b: 0, a: 0}
   emissionColor: {r: 4.237095, g: 0.48804232, b: 3.4162965, a: 0}
+  atomicNumber: 7
+  massNumber: 14
+  atomicMass: 14.007
+  electroNegativity: 3.04
+  atomicRadius: 155
+  ionizationEnergy: 14.534

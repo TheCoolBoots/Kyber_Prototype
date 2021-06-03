@@ -10,22 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7116896d73fb81a498b417ef10e996e5, type: 3}
-  m_Name: WaterData
+  m_Name: MethaneData
   m_EditorClassIdentifier: 
-  commonName: Water
-  state: 1
-  density: 1
+  commonName: Methane
+  state: 2
+  density: 0.000657
   volume: 1
-  chemicalFormula: H2O
-  componentAtoms: H O
-  basePrefab: {fileID: 4281328415731335403, guid: 934ba1e5af8f20d4a89d1d427665aefa,
+  temperature: 298.15
+  meltingPoint: 90.694
+  boilingPoint: 111.6
+  sublimationPoint: -1
+  chemicalFormula: CH4
+  componentAtoms: C H
+  basePrefab: {fileID: 3927279748623988451, guid: a065a0478d8234045af460933ada5a54,
     type: 3}
   gradientScale: 2
   tilingSpeed: 0.4
   displacementScale: 0.05
   fresnelPower: 3
   indexOfRefraction: 0.05
-  tint: {r: 0.31461376, g: 0.5514754, b: 0.6603774, a: 0.3882353}
+  tint: {r: 0, g: 0, b: 0, a: 0}
   emissionColor: {r: 0, g: 0, b: 0, a: 0}
   atomicNumber: 0
   massNumber: 0
@@ -33,5 +37,3 @@ MonoBehaviour:
   electroNegativity: 0
   atomicRadius: 0
   ionizationEnergy: 0
-  meltingPoint: 0
-  boilingPoint: 0
