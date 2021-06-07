@@ -8,52 +8,31 @@ namespace Kyber
 {
     public class VRSnapPoint : MonoBehaviour
     {
-        public Transform snapPoint;
-        public bool showColliderBounds = true;
-        public float colliderRadius = .5f;
-        public Material colliderBoundsMaterial;
-        public bool snapPointOccipied = false;
+        [SerializeField] private Transform snapPoint;
+        [SerializeField] private MeshRenderer colliderBoundsIndicator;
+        [SerializeField] private Collider activationThreshold;
+        [SerializeField] private bool snapPointOccipied = false;
 
         [HideInInspector]
         public GameObject currentSnappedItem;
 
-        private SphereCollider colliderBounds;
-        private GameObject colliderBoundsIndicator;
-
         private void Start()
         {
+            if (snapPoint == null)
+                snapPoint = transform;
+            if (colliderBoundsIndicator == null)
+                colliderBoundsIndicator = GetComponent<MeshRenderer>();
+            if (activationThreshold == null)
+                activationThreshold = GetComponent<Collider>();
 
-            // add sphere collider to current game object, centered @snapPoint, have it act as trigger
-            colliderBounds = gameObject.AddComponent(typeof(SphereCollider)) as SphereCollider;
-            colliderBounds.isTrigger = true;
-            colliderBounds.radius = colliderRadius;
-            colliderBounds.center = Vector3.zero;
-
-            // create a sphere that shows where the snap zone is
-            if (showColliderBounds)
-            {
-                colliderBoundsIndicator = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                colliderBoundsIndicator.GetComponent<Renderer>().material = colliderBoundsMaterial;
-                Destroy(colliderBoundsIndicator.GetComponent<SphereCollider>());
-                colliderBoundsIndicator.transform.localScale = new Vector3(colliderRadius * 2, colliderRadius * 2, colliderRadius * 2);
-                colliderBoundsIndicator.transform.position = snapPoint.position;
-                colliderBoundsIndicator.SetActive(false);
-            }
-
-
+            activationThreshold.isTrigger = true;
+            colliderBoundsIndicator.enabled = false;
         }
 
-        /*        private void OnTriggerEnter(Collider other)
-                {
-                    if (showColliderBounds && !snapPointOccipied)
-                    {
-                        colliderBoundsIndicator.SetActive(true);
-                    }
-                }*/
 
         private void OnTriggerExit(Collider other)
         {
-            colliderBoundsIndicator.SetActive(false);
+            colliderBoundsIndicator.enabled = false;
         }
 
         private void OnTriggerStay(Collider other)
@@ -61,9 +40,9 @@ namespace Kyber
             // if snap point is empty, and component colliding with snap point has a Interactable && Throwable component
             if (!snapPointOccipied && other.GetComponent<Interactable>() != null && other.GetComponent<Throwable>() != null)
             {
-                if (!colliderBoundsIndicator.activeInHierarchy)
+                if (!colliderBoundsIndicator.enabled)
                 {
-                    colliderBoundsIndicator.SetActive(true);
+                    colliderBoundsIndicator.enabled = true;
                 }
 
                 Interactable otherInteractable = other.GetComponent<Interactable>();
@@ -92,7 +71,7 @@ namespace Kyber
             other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             snapPointOccipied = true;
             currentSnappedItem = other.gameObject;
-            colliderBoundsIndicator.SetActive(false);
+            colliderBoundsIndicator.enabled = false;
         }
 
         private void DisengageItem(GameObject canister)
