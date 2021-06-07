@@ -376,16 +376,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3104655436384093651}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7374250774b85d948af1f0aafdca295f, type: 3}
+  m_Script: {fileID: 11500000, guid: 402ec36be773975458ef1afe69829e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canisterPedestal: {fileID: 5792567732052504665}
+  canisterShadowPrefab: {fileID: 343393469658484672, guid: ac5a51704ea880a429263a02f8bd4b5d,
+    type: 3}
+  canisterSnapPoint: {fileID: 259393719590989426}
+  snapPointRadius: 0
+  atomSpawnPoint: {fileID: 3016859985526902582}
+  spawnerSpacing: 0.3
   atomSpawnerPrefab: {fileID: 6454654794764177544, guid: 063e32358a40428428e1c05292ac1bbe,
     type: 3}
-  spawnPoint: {fileID: 3016859985526902582}
-  spawnerSpacing: 0.3
-  active: 0
-  analyzerEnabled: 0
 --- !u!1 &3248951024510847979
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,8 +725,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6921183751001206848}
-  - component: {fileID: 2955422441889066284}
-  - component: {fileID: 1159865649563312304}
   m_Layer: 0
   m_Name: Pedestal
   m_TagString: Untagged
@@ -750,36 +749,6 @@ Transform:
   m_Father: {fileID: 4665096711295762123}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &2955422441889066284
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5792567732052504665}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.2
-  m_Center: {x: 0, y: 0.25, z: 0}
---- !u!114 &1159865649563312304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5792567732052504665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a34170267e5908548a6f7cce22029bcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canisterShadowPrefab: {fileID: 343393469658484672, guid: ac5a51704ea880a429263a02f8bd4b5d,
-    type: 3}
-  snapPoint: {fileID: 259393719590989426}
-  currentCanister: {fileID: 0}
-  pedestalOccupied: 0
 --- !u!1 &6127755928859986142
 GameObject:
   m_ObjectHideFlags: 0

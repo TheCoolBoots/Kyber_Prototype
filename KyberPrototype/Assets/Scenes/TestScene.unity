@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 266665559e694fd4891b3d8c3adc0597,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -885,7 +885,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378686799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.263, y: 0.501, z: 5.176}
+  m_LocalPosition: {x: 6.817, y: 0.501, z: 5.267}
   m_LocalScale: {x: 0.42785, y: 0.42785, z: 0.42785}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3638,3 +3638,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 934ba1e5af8f20d4a89d1d427665aefa, type: 3}
+--- !u!1 &4281328416165167285 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4281328415731335403, guid: 934ba1e5af8f20d4a89d1d427665aefa,
+    type: 3}
+  m_PrefabInstance: {fileID: 4281328416165167284}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &4281328416165167286
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4281328416165167285}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 4
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &4281328416165167287
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4281328416165167285}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
