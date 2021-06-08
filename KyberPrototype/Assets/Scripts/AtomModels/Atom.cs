@@ -15,9 +15,9 @@ namespace Kyber
         }
 
         public AtomData atomData;
-        public GameObject bhorModelRingPrefab;
-        public GameObject electronPrefab;
-        public GameObject nucleusPrefab;
+        [SerializeField] private GameObject bhorModelRingPrefab;
+        [SerializeField] private GameObject electronPrefab;
+        [SerializeField] private GameObject nucleusPrefab;
 
         [Space]
         public float outerDiameter;
