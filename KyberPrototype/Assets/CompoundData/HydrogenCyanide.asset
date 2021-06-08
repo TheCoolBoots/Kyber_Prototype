@@ -10,15 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7116896d73fb81a498b417ef10e996e5, type: 3}
-  m_Name: CarbonData
+  m_Name: HydrogenCyanide
   m_EditorClassIdentifier: 
-  commonName: Carbon
-  state: 0
-  density: 1
+  commonName: Hydrogen Cyanide
+  state: 2
+  density: 0.0006876
   volume: 1
-  chemicalFormula: C
-  componentAtoms: C
-  basePrefab: {fileID: 1099166263948082481, guid: cb13233c3076bba4baa77b0430dc089a,
+  temperature: 298.15
+  meltingPoint: 259.86
+  boilingPoint: 299
+  sublimationPoint: 0
+  chemicalFormula: HCN
+  componentAtoms: H C N
+  basePrefab: {fileID: 3927279748623988451, guid: a065a0478d8234045af460933ada5a54,
     type: 3}
   gradientScale: 2
   tilingSpeed: 0.4
@@ -27,13 +31,9 @@ MonoBehaviour:
   indexOfRefraction: 0.05
   tint: {r: 0, g: 0, b: 0, a: 0}
   emissionColor: {r: 0, g: 0, b: 0, a: 0}
-  atomicName: Carbon
-  atomicSymbol: C
-  atomicNumber: 6
-  valanceElectron: 8
-  atomicMass: 12.01
-  electroNegativity: 2.55
-  atomicRadius: 170
-  ionizationEnergy: 112603
-  meltingPoint: 0
-  boilingPoint: 0
+  atomicNumber: 0
+  massNumber: 0
+  atomicMass: 0
+  electroNegativity: 0
+  atomicRadius: 0
+  ionizationEnergy: 0

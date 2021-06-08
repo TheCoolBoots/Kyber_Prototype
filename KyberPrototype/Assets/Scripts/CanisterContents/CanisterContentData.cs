@@ -43,14 +43,17 @@ namespace Kyber
 
         [Header("Element Data")]
         [Tooltip("The number of protons in the element")] // Jean, add tooltips like these to the rest of the entries
+        public string atomicName;
+        public string atomicSymbol;
         public int atomicNumber;
-        public int massNumber;
+        public int valanceElectron;
         public float atomicMass;
         public float electroNegativity;
         public float atomicRadius;
         public float ionizationEnergy;
         public float meltingPoint;
         public float boilingPoint;
+        
 
     }
 }
