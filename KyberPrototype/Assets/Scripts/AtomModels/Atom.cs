@@ -8,6 +8,7 @@ namespace Kyber
     {
         private enum displayModes
         {
+            Simple,
             BohrModel,
             ElectronClouds,
             OrbitalElectronsInClouds
@@ -25,7 +26,6 @@ namespace Kyber
 
         private ElectronOrbitalData electronOrbitalData;
         private displayModes currentDisplayMode = displayModes.BohrModel;
-
 
         private List<GameObject> bhorModelRings;
         private GameObject nucleus;

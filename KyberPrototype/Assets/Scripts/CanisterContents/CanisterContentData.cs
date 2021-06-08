@@ -16,8 +16,17 @@ namespace Kyber
         [Header("For All Compounds")]
         public string commonName;
         public States state;
-        public double density = 1f;
-        public double volume = 1f;
+        [Tooltip("g/cm^3 at 25C")]
+        public float density = 1f;
+        public float volume = 1f;
+        [Tooltip("in Kelvin; 298.15K = room temperature")]
+        public float temperature = 298.15f;
+        [Tooltip("Kelvin @ 1 atm")]
+        public float meltingPoint;
+        [Tooltip("Kelvin @ 1 atm")]
+        public float boilingPoint;
+        [Tooltip("Kelvin @ 1 atm")]
+        public float sublimationPoint;
         public string chemicalFormula;
         public string componentAtoms;
 
@@ -25,8 +34,9 @@ namespace Kyber
         public GameObject basePrefab;
 
         // for liquids
-        [Tooltip("Can leave these blank if compound is solid or gas")]
+
         [Header("For Rendering Liquids")]
+        [Tooltip("Can leave these blank if compound is solid or gas")]
         public float gradientScale = 2f;
         public float tilingSpeed = .4f;
         public float displacementScale = .05f;
@@ -35,25 +45,26 @@ namespace Kyber
         public Color tint;
 
         // for gasses
-        [Tooltip("Can leave these blank if compound is solid or gas")]
+        [Tooltip("Can leave these blank if compound is solid or liquid")]
         [Header("For Rendering Gasses")]
         [ColorUsage(true, true)]
         public Color emissionColor;
 
 
         [Header("Element Data")]
-        [Tooltip("The number of protons in the element")] // Jean, add tooltips like these to the rest of the entries
-        public string atomicName;
-        public string atomicSymbol;
+        // Jean, add tooltips like these to the rest of the entries
         public int atomicNumber;
         public int valanceElectron;
         public float atomicMass;
         public float electroNegativity;
+        [Tooltip("picometers")]
         public float atomicRadius;
+        [Tooltip("eV")]
         public float ionizationEnergy;
-        public float meltingPoint;
-        public float boilingPoint;
-        
+
+
+        //[Header("Molecule Data")]
+
 
     }
 }
