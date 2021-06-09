@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
+using UnityEngine.Events;
 
 namespace Kyber
 {
@@ -11,12 +12,16 @@ namespace Kyber
         [SerializeField] private Transform snapPoint;
         [SerializeField] private MeshRenderer colliderBoundsIndicator;
         [SerializeField] private Collider activationThreshold;
-        [SerializeField] private bool snapPointOccipied = false;
 
-        [HideInInspector]
+        [Space]
+        [SerializeField] private UnityEvent engageEvents;
+        [SerializeField] private UnityEvent disengageEvents;
+
+        [Space]
+        public bool snapPointOccipied = false;
         public GameObject currentSnappedItem;
 
-        private void Start()
+        private void Awake()
         {
             if (snapPoint == null)
                 snapPoint = transform;
@@ -72,12 +77,22 @@ namespace Kyber
             snapPointOccipied = true;
             currentSnappedItem = other.gameObject;
             colliderBoundsIndicator.enabled = false;
+            engageEvents.Invoke();
         }
 
         private void DisengageItem(GameObject canister)
         {
             canister.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             snapPointOccipied = false;
+            disengageEvents.Invoke();
+        }
+
+        private void OnDisable()
+        {
+            if (snapPointOccipied)
+            {
+                DisengageItem(currentSnappedItem);
+            }
         }
 
     }
