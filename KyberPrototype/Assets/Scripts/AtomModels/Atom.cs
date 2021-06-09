@@ -21,10 +21,10 @@ namespace Kyber
 
         [Space]
         public float outerDiameter;
-        public float electronSpeed;
-        public float electronScale;
+        [SerializeField] private float electronSpeed;
+        [SerializeField] private float electronScale;
 
-        private ElectronOrbitalData electronOrbitalData;
+        public ElectronOrbitalData electronOrbitalData;
         private displayModes currentDisplayMode = displayModes.BohrModel;
 
         private List<GameObject> bhorModelRings;
