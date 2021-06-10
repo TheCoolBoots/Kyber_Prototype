@@ -5,115 +5,136 @@ using Kyber;
 
 public class MolecularBonderRootNode : MonoBehaviour
 {
-    [SerializeField] private GameObject rootGO;
-    [SerializeField] private GameObject northGO;
-    [SerializeField] private GameObject southGO;
-    [SerializeField] private GameObject eastGO;
-    [SerializeField] private GameObject westGO;
+    [SerializeField] private GameObject rootBondingSite;
+    [SerializeField] private GameObject[] outerBondingSites;
 
-    [SerializeField] private VRSnapPoint rootSnapPoint;
-    [SerializeField] private VRSnapPoint northSnapPoint;
-    [SerializeField] private VRSnapPoint southSnapPoint;
-    [SerializeField] private VRSnapPoint eastSnapPoint;
-    [SerializeField] private VRSnapPoint westSnapPoint;
+    [SerializeField] private VRSnapPoint rootAtomContainer;
+    [SerializeField] private VRSnapPoint[] outerAtomContainers;
 
-    [SerializeField] private MeshRenderer rootIndicator;
-    [SerializeField] private MeshRenderer northIndicator;
-    [SerializeField] private MeshRenderer southIndicator;
-    [SerializeField] private MeshRenderer eastIndicator;
-    [SerializeField] private MeshRenderer westIndicator;
+    private Atom rootAtom;
+    private Atom[] outerAtoms;
 
-    private GameObject[] bondingSites;
-    private MeshRenderer[] indicators;
-
+    private int maxNumBondingSites;
     private int numBondingSites;
+    private int maxNumBonds;
+    private int numBonds;
+    private int[] numBondsPerAtom;
+
     private void Awake()
     {
-        bondingSites = new GameObject[4];
-        bondingSites[0] = westGO;
-        bondingSites[1] = northGO;
-        bondingSites[2] = eastGO;
-        bondingSites[3] = southGO;
+        outerAtoms = new Atom[4] { null, null, null, null };
 
-        indicators = new MeshRenderer[4];
-        indicators[0] = westIndicator;
-        indicators[1] = northIndicator;
-        indicators[2] = eastIndicator;
-        indicators[3] = southIndicator;
-    }
+        numBondsPerAtom = new int[4] { 0, 0, 0, 0};
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        resetBondingSites();
-    }
-
-    public void UpdateRootNode()
-    {
-        if (rootSnapPoint.snapPointOccipied)
+        foreach (GameObject go in outerBondingSites)
         {
-            rootIndicator.enabled = false;
-            Atom currentAtom;
-            if((currentAtom = rootSnapPoint.currentSnappedItem.GetComponent<Atom>()) != null)
+            go.SetActive(false);
+        }
+    }
+
+    public void RootNodeStateChange()
+    {
+        numBonds = 0;
+        if (rootAtomContainer.snapPointOccipied)
+        {
+            if((rootAtom = rootAtomContainer.currentSnappedItem.GetComponent<Atom>()) != null)
             {
-                AtomData currentAtomData = currentAtom.atomData;
-                ElectronOrbitalData orbitalData = currentAtom.electronOrbitalData;
-                int[] bhorModelData = orbitalData.GetBhorModelData();
-
-                int valenceElectrons = 0;
-
-                for(int i = 0; i < bhorModelData.Length && bhorModelData[i] > 0; i++)
+                int valenceElectrons = GetNumValenceElectrons(rootAtom);
+                if(valenceElectrons < 2)
                 {
-                    valenceElectrons = bhorModelData[i];
+                    maxNumBondingSites = 1;
+                    numBondingSites = 1;
                 }
-
-                if(valenceElectrons < 4)
+                else if(valenceElectrons >= 4)
                 {
-                    SetNumBondingSites(1);
+                    maxNumBondingSites = 8 - valenceElectrons;
+                    numBondingSites = maxNumBondingSites;
                 }
                 else
                 {
-                    // NOTE: only works with atoms that have <= 8 valence electrons
-                    SetNumBondingSites(8 - valenceElectrons);
+                    // ERROR: element cannot form covalent bond
                 }
+                SetNumBondingSites(numBondingSites);
             }
         }
         else
         {
-            rootIndicator.enabled = true;
-            resetBondingSites();
+            rootAtom = null;
+            foreach (GameObject go in outerBondingSites)
+            {
+                go.SetActive(false);
+            }
         }
+
     }
 
-    void SetNumBondingSites(int num)
+    private int GetNumValenceElectrons(Atom atom)
     {
-        numBondingSites = num;
-
-        for(int i = 0; i < 4; i++)
+        int[] orbitalData = atom.electronOrbitalData.GetBhorModelData();
+        int valenceElectrons = 0;
+        for(int i = 1; i < orbitalData.Length && orbitalData[i] > 0; i ++)
         {
-            if(i < num)
+            valenceElectrons = orbitalData[i];
+        }
+        print(valenceElectrons);
+        return valenceElectrons;
+    }
+
+    public void OuterNodeStateChange()
+    {
+        numBonds = 0;
+        for(int S = 0; S < 4; S++)
+        {
+            if (outerAtomContainers[S].snapPointOccipied)
             {
-                bondingSites[i].SetActive(true);
-                indicators[i].enabled = true;
+                if((outerAtoms[S] = outerAtomContainers[S].currentSnappedItem.GetComponent<Atom>()) != null)
+                {
+                    // enable bondControls[S]
+                    // numBonds += bondControls[S].numBonds
+                    // numBondsPerAtom[S] = bondControls[S].numBonds
+                }
+                else
+                {
+                    // disable bondControls[S]
+                }
             }
             else
             {
-                bondingSites[i].SetActive(false);
-                indicators[i].enabled = false;
+                outerAtoms[S] = null;
+                // disable bondControls[S]
             }
         }
+
+        for(int i = 0; i < 4; i++)
+        {
+            // bondIndicators[i].setNumBonds(numBondsPerAtom[i])
+            numBondingSites -= (numBondsPerAtom[i] - 1);
+        }
+
+        if(numBondingSites <= 0)
+        {
+            // ERROR: too many bonds for root atom
+        }
+        else
+        {
+            // if all atoms have full electron shells
+                // success!, press generate compound
+            // else
+                // error, not all atoms have full valence shell
+        }
     }
-
-    void resetBondingSites()
+    private void SetNumBondingSites(int num)
     {
-        northGO.SetActive(false);
-        southGO.SetActive(false);
-        eastGO.SetActive(false);
-        westGO.SetActive(false);
-
-        indicators[0].enabled = false;
-        indicators[1].enabled = false;
-        indicators[2].enabled = false;
-        indicators[3].enabled = false;
+        for (int i = 0; i < 4; i++)
+        {
+            if (i < num)
+            {
+                outerBondingSites[i].SetActive(true);
+            }
+            else
+            {
+                outerBondingSites[i].SetActive(false);
+            }
+        }
     }
 }
