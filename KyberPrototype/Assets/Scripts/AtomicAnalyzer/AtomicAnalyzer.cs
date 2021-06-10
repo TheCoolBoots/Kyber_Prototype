@@ -3,37 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using Kyber;
 using Valve.VR.InteractionSystem;
+using UnityEngine.Events;
 
 public class AtomicAnalyzer : MonoBehaviour
 {
-    /*private enum AtomModelTypes
-    {
-        Simple, Bhor, ElectronOrbitals
-    }*/
 
-    
-    //[SerializeField] private GameObject bhorElectronPrefab;
-    //[SerializeField] private GameObject protonPrefab;
-    //[SerializeField] private GameObject electronPrefab;
-
-
-    //[SerializeField] private AtomModelTypes spawnAtomType;
-
-    //
-
-    //[SerializeField] private bool active = false;           // make these two read-only
-    //[SerializeField] private bool analyzerEnabled = false;  
-
-    //[SerializeField] private List<GameObject> currentAtoms;
-
-
+    public UnityEvent updateDisplay;
 
     [Header("Analyzer Pedestal Variables")]
     [SerializeField] private GameObject canisterShadowPrefab;
     [SerializeField] private Transform canisterSnapPoint;
+    [SerializeField] private Collider pedestalSnapCollider;
     [SerializeField] private float snapPointRadius;
     private GameObject canisterShadowInstance;
-    private SphereCollider pedestalSnapCollider;
     private bool pedestalOccupied;
     private GameObject currentEngagedCanister;
 
@@ -45,7 +27,8 @@ public class AtomicAnalyzer : MonoBehaviour
 
     //[Header("Atomic Analyzer Variables")]
     private bool active = false;
-    private CanisterContentData currentCompoundData;
+    [HideInInspector]
+    public CanisterContentData currentCompoundData;
 
     // Start is called before the first frame update
     void Start()
@@ -65,9 +48,6 @@ public class AtomicAnalyzer : MonoBehaviour
      **********************************************************************/
     private void InitializeAnalyzerPedestal()
     {
-        pedestalSnapCollider = gameObject.AddComponent<SphereCollider>();
-        pedestalSnapCollider.center = canisterSnapPoint.localPosition;
-        pedestalSnapCollider.radius = snapPointRadius;
         pedestalSnapCollider.isTrigger = true;
 
         canisterShadowInstance = Instantiate(canisterShadowPrefab, transform);
@@ -112,6 +92,8 @@ public class AtomicAnalyzer : MonoBehaviour
         pedestalOccupied = true;
         currentEngagedCanister = other.gameObject;
         currentCompoundData = other.gameObject.GetComponent<CanisterContent>()._data;
+
+        updateDisplay.Invoke();
     }
 
     private void DisengageCanister(GameObject canister)
@@ -182,5 +164,10 @@ public class AtomicAnalyzer : MonoBehaviour
             }
 
         }
+    }
+
+    public bool IsActive()
+    {
+        return active;
     }
 }
