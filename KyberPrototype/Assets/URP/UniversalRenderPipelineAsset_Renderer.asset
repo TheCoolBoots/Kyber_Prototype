@@ -49,11 +49,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14edb01d2fbfc1644b2aa5d083fe80ed, type: 3}
-  m_Name: NewBlit
+  m_Name: WaterFog
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    Event: 400
+    Event: 500
     blitMaterial: {fileID: 2100000, guid: cbc0a56c8e040f74291bc4e94c92ce21, type: 2}
     blitMaterialPassIndex: 0
     destination: 0
