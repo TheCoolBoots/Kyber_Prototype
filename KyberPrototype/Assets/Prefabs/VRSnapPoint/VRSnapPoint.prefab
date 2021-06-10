@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3049391874926996007}
   - component: {fileID: 3689251708337469478}
   - component: {fileID: 7647673213971384432}
+  - component: {fileID: -5223521321316654473}
   m_Layer: 8
   m_Name: VRSnapPoint
   m_TagString: Untagged
@@ -49,6 +50,12 @@ MonoBehaviour:
   snapPoint: {fileID: 2681250422930939398}
   colliderBoundsIndicator: {fileID: 0}
   activationThreshold: {fileID: 0}
+  engageEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  disengageEvents:
+    m_PersistentCalls:
+      m_Calls: []
   snapPointOccipied: 0
   currentSnappedItem: {fileID: 0}
 --- !u!23 &3049391874926996007
@@ -111,3 +118,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2681250422930939392}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &-5223521321316654473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2681250422930939392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c15c14e615e1fb478decdbf0855a4e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridPoint: 0
+  atom: {fileID: 1891933900350497439, guid: f769e5220e517bb4db7275ce17260e76, type: 3}

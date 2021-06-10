@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,8 +33,8 @@ public class GenerateAtom : MonoBehaviour
 
     }
 }
-
-/*using System.Collections;
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -51,14 +51,7 @@ public class GenerateAtom : MonoBehaviour
 
     public void generateAtom()
     {
-        if (GameObject.Find("myPrefab"))
-        {
-
-        }
-        else
-        {
-            Instantiate(myPrefab, new Vector3(-1, 1, 0), Quaternion.identity);
-        }
+        Instantiate(myPrefab, new Vector3(-0.75f, 1, 0), Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -67,4 +60,3 @@ public class GenerateAtom : MonoBehaviour
 
     }
 }
-*/
