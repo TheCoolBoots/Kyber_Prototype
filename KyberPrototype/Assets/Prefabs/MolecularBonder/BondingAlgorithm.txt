@@ -1,0 +1,48 @@
+@ every root snap point state change:
+	if occupied
+		if item is atom
+			get atom data
+			set available number of bonds
+			enable corresponding snap points
+		else
+			root atom data = null
+			disable all snap points
+	else
+		root atom = null
+		disable all snap points
+		
+@ every outer snap point state change:
+	int numBonds = 0
+	AtomData[] 
+	int[] bondTypes = [null, null, null, null]
+	for each outer snap point S
+		if S is occupied
+			if item at S is an atom
+				AtomData[S] = S.getData
+				enable S bond controls B
+				numBonds += B.currentNumBonds
+				bondTypes[S] = B.currentNumBonds
+			else
+				AtomData[S] = null
+				disable B
+		else
+			AtomData[S] = null
+			disable B
+			
+	get availableNumBonds
+	disable all bond indicators
+	foreach int b in bondTypes
+		for int i = 0 to b
+			enable 1 bond indicator
+			availableNumBonds -= 1
+		
+	if availableNumBonds == 0
+		if all atoms have full valence shell
+			success!
+		else
+			error, not all outer atoms have full valence shell
+	else if availableNumBonds < 0
+		too many bonds with central atom
+	else if availableNumBonds > 0
+		not enough bonds with central atom
+		

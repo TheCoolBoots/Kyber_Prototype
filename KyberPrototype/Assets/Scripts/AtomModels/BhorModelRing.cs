@@ -12,7 +12,7 @@ public class BhorModelRing : MonoBehaviour
 
     [Space]
     [Tooltip("Enable/disable electron movement")]
-    public bool orbiting = true;
+    [SerializeField] private bool orbiting = true;
 
     [Space]
     [HideInInspector]

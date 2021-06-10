@@ -8,18 +8,18 @@ using Valve.VR.InteractionSystem;
 public class AtomNucleus : MonoBehaviour
 {
     [Header("Proton/Neutron resource filepaths")]
-    public string protonResourceFilepath = "AtomComponents/Proton/Proton";
-    public string neutronResourceFilepath = "AtomComponents/Neutron/Neutron";
+    [SerializeField] private string protonResourceFilepath = "AtomComponents/Proton/Proton";
+    [SerializeField] private string neutronResourceFilepath = "AtomComponents/Neutron/Neutron";
 
     [Header("Nucleus data")]
     public int atomicNumber = 1;
     public int massNumber = 1;
-    public float strongForce = 100f;
-    public float inertia = 5f;
+    [SerializeField] private float strongForce = 100f;
+    [SerializeField] private float inertia = 5f;
 
     [Header("Size")]
     public float nucleusDiameter = .1f;
-    public float nucleusDiameterBuffer;
+    [SerializeField] private float nucleusDiameterBuffer;
 
     private int numNeutrons;
     private float componentScale;
