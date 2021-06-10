@@ -7,7 +7,7 @@ public class AtomPlacer : MonoBehaviour
 
     void Start()
     {
-        placeAtom();
+
     }
 
     private void Update()
