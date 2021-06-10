@@ -677,6 +677,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f769e5220e517bb4db7275ce17260e76, type: 3}
+--- !u!23 &1461726955 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1358316798277319037, guid: e48094c0e128f304898b5d0b71e7d3fc,
+    type: 3}
+  m_PrefabInstance: {fileID: 7887990958240081291}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1472333177
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,6 +775,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 31.53, y: 29.015001, z: 41.051003}
+--- !u!23 &1668007780 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7182574806908352070, guid: e48094c0e128f304898b5d0b71e7d3fc,
+    type: 3}
+  m_PrefabInstance: {fileID: 7887990958240081291}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1908481327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -975,6 +987,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MolecularBonderAndrew
+      objectReference: {fileID: 0}
+    - target: {fileID: 5034565695271913813, guid: e48094c0e128f304898b5d0b71e7d3fc,
+        type: 3}
+      propertyPath: disengageEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1461726955}
+    - target: {fileID: 5034565695271913813, guid: e48094c0e128f304898b5d0b71e7d3fc,
+        type: 3}
+      propertyPath: disengageEvents.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929524356247484686, guid: e48094c0e128f304898b5d0b71e7d3fc,
+        type: 3}
+      propertyPath: engageEvents.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929524356247484686, guid: e48094c0e128f304898b5d0b71e7d3fc,
+        type: 3}
+      propertyPath: engageEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929524356247484686, guid: e48094c0e128f304898b5d0b71e7d3fc,
+        type: 3}
+      propertyPath: engageEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1668007780}
+    - target: {fileID: 7929524356247484686, guid: e48094c0e128f304898b5d0b71e7d3fc,
+        type: 3}
+      propertyPath: engageEvents.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929524356247484686, guid: e48094c0e128f304898b5d0b71e7d3fc,
+        type: 3}
+      propertyPath: engageEvents.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_enabled
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e48094c0e128f304898b5d0b71e7d3fc, type: 3}
