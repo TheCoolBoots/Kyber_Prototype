@@ -52,6 +52,7 @@ public class GenerateAtom : MonoBehaviour
     public void generateAtom()
     {
         Instantiate(myPrefab, new Vector3(-0.75f, 1, 0), Quaternion.identity);
+        System.Environment.Exit(1);
     }
 
     // Update is called once per frame
