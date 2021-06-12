@@ -1,40 +1,4 @@
-﻿/*using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class GenerateAtom : MonoBehaviour
-{
-    public static GenerateAtom Instance;
-    public GameObject atom;
-
-    void Start()
-    {
-
-    }
-
-    public void generateAtom()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(this);
-            Instantiate(atom, new Vector3(-1, 1, 0), Quaternion.identity);
-        }
-        else if (this != Instance)
-        {
-            Debug.Log("Destroying extra GM");
-            Destroy(this.gameObject);
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-}
-*/
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -42,17 +6,20 @@ using UnityEditor;
 public class GenerateAtom : MonoBehaviour
 {
     public GameObject myPrefab;
+    public float x, y, z;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        for (int i = 0; i < 9; i++)
+        {
+            Instantiate(myPrefab, new Vector3(x, y, z), Quaternion.identity);
+        }
     }
 
     public void generateAtom()
     {
-        Instantiate(myPrefab, new Vector3(-0.75f, 1, 0), Quaternion.identity);
-        System.Environment.Exit(1);
+        Instantiate(myPrefab, new Vector3(x, y, z), Quaternion.identity);
     }
 
     // Update is called once per frame
