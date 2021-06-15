@@ -13,6 +13,7 @@ using TMPro;
         [SerializeField] private TextMeshProUGUI atomNumber;
         [SerializeField] private TextMeshProUGUI atomMass;
         [SerializeField] private TextMeshProUGUI atomValenceElcetrons;
+        [SerializeField] private TextMeshProUGUI atomElectronegativity;
         [SerializeField] private TextMeshProUGUI atomRadius;
         [SerializeField] private TextMeshProUGUI atomIonizationEnergy;
 
@@ -24,7 +25,8 @@ using TMPro;
             atomNumber.text = atomicAnalyzer.currentCompoundData.atomicNumber.ToString();
             atomMass.text = atomicAnalyzer.currentCompoundData.atomicMass.ToString();
             atomValenceElcetrons.text = atomicAnalyzer.currentCompoundData.valanceElectron.ToString();
-            atomRadius.text = atomicAnalyzer.currentCompoundData.atomicRadius.ToString();
+            atomElectronegativity.text = atomicAnalyzer.currentCompoundData.valanceElectron.ToString();
+            atomRadius.text = atomicAnalyzer.currentCompoundData.electroNegativity.ToString();
             atomIonizationEnergy.text = atomicAnalyzer.currentCompoundData.ionizationEnergy.ToString();
 
 

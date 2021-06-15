@@ -15,16 +15,16 @@ namespace Kyber
         }
 
         public AtomData atomData;
-        public GameObject bhorModelRingPrefab;
-        public GameObject electronPrefab;
-        public GameObject nucleusPrefab;
+        [SerializeField] private GameObject bhorModelRingPrefab;
+        [SerializeField] private GameObject electronPrefab;
+        [SerializeField] private GameObject nucleusPrefab;
 
         [Space]
         public float outerDiameter;
-        public float electronSpeed;
-        public float electronScale;
+        [SerializeField] private float electronSpeed;
+        [SerializeField] private float electronScale;
 
-        private ElectronOrbitalData electronOrbitalData;
+        public ElectronOrbitalData electronOrbitalData;
         private displayModes currentDisplayMode = displayModes.BohrModel;
 
         private List<GameObject> bhorModelRings;
