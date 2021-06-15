@@ -4,43 +4,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-
-namespace Kyber
-{
     public class atomInfoText : MonoBehaviour
     {
-        public AnalyzerPedestal analyzerPedestal;
+        [SerializeField] private AtomicAnalyzer atomicAnalyzer;
 
-        public TextMeshProUGUI atomName;
-        public TextMeshProUGUI atomSymbol;
-        public TextMeshProUGUI atomNumber;
-        public TextMeshProUGUI atomMass;
-        public TextMeshProUGUI atomValenceElcetrons;
-        public TextMeshProUGUI atomRadius;
-        public TextMeshProUGUI atomIonizationEnergy;
+        [SerializeField] private TextMeshProUGUI atomName;
+        [SerializeField] private TextMeshProUGUI atomSymbol;
+        [SerializeField] private TextMeshProUGUI atomNumber;
+        [SerializeField] private TextMeshProUGUI atomMass;
+        [SerializeField] private TextMeshProUGUI atomValenceElcetrons;
+        [SerializeField] private TextMeshProUGUI atomRadius;
+        [SerializeField] private TextMeshProUGUI atomIonizationEnergy;
 
-        private AtomicAnalyzer canisterPedestal;
-        private CanisterContentData data;
 
-        // Start is called before the first frame update
-        void Start()
+        public void updateAtomInfo()
         {
-            atomName.text = "testing";
-            atomName.fontSize = 0.01f;
-        }
+            atomName.text = atomicAnalyzer.currentCompoundData.commonName;
+            atomSymbol.text = atomicAnalyzer.currentCompoundData.chemicalFormula;
+            atomNumber.text = atomicAnalyzer.currentCompoundData.atomicNumber.ToString();
+            atomMass.text = atomicAnalyzer.currentCompoundData.atomicMass.ToString();
+            atomValenceElcetrons.text = atomicAnalyzer.currentCompoundData.valanceElectron.ToString();
+            atomRadius.text = atomicAnalyzer.currentCompoundData.atomicRadius.ToString();
+            atomIonizationEnergy.text = atomicAnalyzer.currentCompoundData.ionizationEnergy.ToString();
 
-        // Update is called once per frames
-        void Update()
-        {
 
-        }
-
-        void updateAtomInfo()
-        {
-
-            canisterPedestal = GameObject.Find("canisterPedestal").GetComponent<AtomicAnalyzer>();
-
-            data = canisterPedestal.GetComponent<AnalyzerPedestal>().currentCanister.GetComponent<CanisterContent>()._data;
-        }
     }
-}
+    }
+

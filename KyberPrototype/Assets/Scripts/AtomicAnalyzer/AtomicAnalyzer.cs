@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Kyber;
 using Valve.VR.InteractionSystem;
 
@@ -11,7 +12,7 @@ public class AtomicAnalyzer : MonoBehaviour
         Simple, Bhor, ElectronOrbitals
     }*/
 
-    
+
     //[SerializeField] private GameObject bhorElectronPrefab;
     //[SerializeField] private GameObject protonPrefab;
     //[SerializeField] private GameObject electronPrefab;
@@ -26,6 +27,7 @@ public class AtomicAnalyzer : MonoBehaviour
 
     //[SerializeField] private List<GameObject> currentAtoms;
 
+    public UnityEvent updateDisplay;
 
 
     [Header("Analyzer Pedestal Variables")]
@@ -45,7 +47,7 @@ public class AtomicAnalyzer : MonoBehaviour
 
     //[Header("Atomic Analyzer Variables")]
     private bool active = false;
-    private CanisterContentData currentCompoundData;
+    public CanisterContentData currentCompoundData;
 
     // Start is called before the first frame update
     void Start()
@@ -73,6 +75,9 @@ public class AtomicAnalyzer : MonoBehaviour
         canisterShadowInstance = Instantiate(canisterShadowPrefab, transform);
         canisterShadowInstance.transform.localPosition = canisterSnapPoint.localPosition;
         canisterShadowInstance.SetActive(false);
+
+        updateDisplay.Invoke();
+
     }
 
     private void OnTriggerExit(Collider other)
