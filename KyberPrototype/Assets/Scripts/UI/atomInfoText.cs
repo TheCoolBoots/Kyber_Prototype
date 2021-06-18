@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-    public class atomInfoText : MonoBehaviour
+    public class AtomInfoText : MonoBehaviour
     {
         [SerializeField] private AtomicAnalyzer atomicAnalyzer;
 

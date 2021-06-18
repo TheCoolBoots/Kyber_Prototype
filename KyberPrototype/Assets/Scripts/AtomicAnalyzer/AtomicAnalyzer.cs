@@ -54,9 +54,6 @@ public class AtomicAnalyzer : MonoBehaviour
         canisterShadowInstance = Instantiate(canisterShadowPrefab, transform);
         canisterShadowInstance.transform.localPosition = canisterSnapPoint.localPosition;
         canisterShadowInstance.SetActive(false);
-
-        updateDisplay.Invoke();
-
     }
 
     private void OnTriggerExit(Collider other)
@@ -98,7 +95,7 @@ public class AtomicAnalyzer : MonoBehaviour
         currentCompoundData = other.gameObject.GetComponent<CanisterContent>()._data;
 
         updateDisplay.Invoke();
-    }
+    } 
 
     private void DisengageCanister(GameObject canister)
     {
@@ -150,6 +147,7 @@ public class AtomicAnalyzer : MonoBehaviour
      **********************************************************************/
     public void AnalyzeCompound()
     {
+
         if (currentEngagedCanister != null)
         {
             // send data to AnalyzerScreen and display it
@@ -168,6 +166,9 @@ public class AtomicAnalyzer : MonoBehaviour
             }
 
         }
+
+        updateDisplay.Invoke();
+
     }
 
     public bool IsActive()
