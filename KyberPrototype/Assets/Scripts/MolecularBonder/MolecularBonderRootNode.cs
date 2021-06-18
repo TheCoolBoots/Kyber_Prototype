@@ -11,6 +11,8 @@ public class MolecularBonderRootNode : MonoBehaviour
     [SerializeField] private VRSnapPoint rootAtomContainer;
     [SerializeField] private VRSnapPoint[] outerAtomContainers;
 
+    [SerializeField] private BondIndicator[] bondIndicators;
+
     private Atom rootAtom;
     private Atom[] outerAtoms;
 
@@ -89,25 +91,24 @@ public class MolecularBonderRootNode : MonoBehaviour
             {
                 if((outerAtoms[S] = outerAtomContainers[S].currentSnappedItem.GetComponent<Atom>()) != null)
                 {
-                    // enable bondControls[S]
-                    // numBonds += bondControls[S].numBonds
-                    // numBondsPerAtom[S] = bondControls[S].numBonds
+                    bondIndicators[S].gameObject.SetActive(true);
+                    numBonds += bondIndicators[S].numBonds;
+                    numBondsPerAtom[S] = bondIndicators[S].numBonds;
                 }
                 else
                 {
-                    // disable bondControls[S]
+                    bondIndicators[S].numBonds = 0;
                 }
             }
             else
             {
                 outerAtoms[S] = null;
-                // disable bondControls[S]
+                bondIndicators[S].numBonds = 0;
             }
         }
 
         for(int i = 0; i < 4; i++)
         {
-            // bondIndicators[i].setNumBonds(numBondsPerAtom[i])
             numBondingSites -= (numBondsPerAtom[i] - 1);
         }
 
