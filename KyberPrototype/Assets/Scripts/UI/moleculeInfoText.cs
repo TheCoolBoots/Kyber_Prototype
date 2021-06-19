@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class moleculeInfoText : MonoBehaviour
+public class MoleculeInfoText : MonoBehaviour
 {
     public TextMeshProUGUI moleculeName;
     public TextMeshProUGUI moleculeFormula;

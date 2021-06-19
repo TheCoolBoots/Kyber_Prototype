@@ -93,8 +93,6 @@ public class AtomicAnalyzer : MonoBehaviour
         pedestalOccupied = true;
         currentEngagedCanister = other.gameObject;
         currentCompoundData = other.gameObject.GetComponent<CanisterContent>()._data;
-
-        updateDisplay.Invoke();
     } 
 
     private void DisengageCanister(GameObject canister)
