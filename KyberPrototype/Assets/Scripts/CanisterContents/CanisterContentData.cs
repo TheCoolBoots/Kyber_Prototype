@@ -63,7 +63,11 @@ namespace Kyber
         public float ionizationEnergy;
 
 
-        //[Header("Molecule Data")]
+        [Header("Molecule Data")]
+        public bool polarity;
+        public float bondAngle;
+        public string electronGeometry;
+        public string molecularGeometry; 
 
 
     }

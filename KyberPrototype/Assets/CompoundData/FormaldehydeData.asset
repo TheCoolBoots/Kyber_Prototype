@@ -32,8 +32,12 @@ MonoBehaviour:
   tint: {r: 0.8113208, g: 0.5902985, b: 0.2028302, a: 0.5372549}
   emissionColor: {r: 0, g: 0, b: 0, a: 0}
   atomicNumber: 0
-  massNumber: 0
+  valanceElectron: 0
   atomicMass: 0
   electroNegativity: 0
   atomicRadius: 0
   ionizationEnergy: 0
+  polarity: 0
+  bondAngle: 0
+  electronGeometry: 
+  molecularGeometry: 

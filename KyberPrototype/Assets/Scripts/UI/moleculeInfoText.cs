@@ -6,25 +6,43 @@ using TMPro;
 
 public class MoleculeInfoText : MonoBehaviour
 {
-    public TextMeshProUGUI moleculeName;
-    public TextMeshProUGUI moleculeFormula;
-    public TextMeshProUGUI moleculeDensity;
-    public TextMeshProUGUI moleculePolrity;
-    public TextMeshProUGUI moleculeBondAngle;
-    public TextMeshProUGUI moleculeComposedAtoms;
-    public TextMeshProUGUI moleculeElectronGeo;
-    public TextMeshProUGUI moleculeMolecularGeo;
-    public TextMeshProUGUI moleculeComposition;
+    [SerializeField] private AtomicAnalyzer atomicAnalyzer;
+
+    [SerializeField] private TextMeshProUGUI moleculeName;
+    [SerializeField] private TextMeshProUGUI moleculeFormula;
+    [SerializeField] private TextMeshProUGUI moleculeDensity;
+    [SerializeField] private TextMeshProUGUI moleculePolrity;
+    [SerializeField] private TextMeshProUGUI moleculeBondAngle;
+    [SerializeField] private TextMeshProUGUI moleculeComponentAtoms;
+    [SerializeField] private TextMeshProUGUI moleculeElectronGeo;
+    [SerializeField] private TextMeshProUGUI moleculeMolecularGeo;
 
 
-    // Start is called before the first frame update
-    void Start()
+    public void updateMoleculInfo()
     {
+        moleculeName.text = atomicAnalyzer.currentCompoundData.commonName;
+        moleculeFormula.text = atomicAnalyzer.currentCompoundData.chemicalFormula;
+        moleculeDensity.text = atomicAnalyzer.currentCompoundData.density.ToString();
+        moleculePolrity.text = checkPolarity(atomicAnalyzer.currentCompoundData.polarity);
+        moleculeBondAngle.text = atomicAnalyzer.currentCompoundData.bondAngle.ToString();
+        moleculeComponentAtoms.text = atomicAnalyzer.currentCompoundData.componentAtoms;
+        moleculeElectronGeo.text = atomicAnalyzer.currentCompoundData.electronGeometry;
+        moleculeMolecularGeo.text = atomicAnalyzer.currentCompoundData.molecularGeometry;
+
     }
 
-    // Update is called once per frame
-    void Update()
+    string checkPolarity(bool moleculePolarity)
     {
-        
+        string polar = "n/a";
+        if(moleculePolarity == true)
+        {
+            polar = "polar";
+        }
+        else
+        {
+            polar = "non polar";
+        }
+
+        return polar;
     }
 }
