@@ -39,6 +39,25 @@ MonoBehaviour:
       restoreCamera: 1
       offset: {x: 0, y: 0, z: 0, w: 0}
       cameraFieldOfView: 60
+--- !u!114 &-4166955367479604058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14edb01d2fbfc1644b2aa5d083fe80ed, type: 3}
+  m_Name: WaterFog
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    Event: 500
+    blitMaterial: {fileID: 2100000, guid: cbc0a56c8e040f74291bc4e94c92ce21, type: 2}
+    blitMaterialPassIndex: 0
+    destination: 0
+    textureId: _BlitPassTexture
 --- !u!114 &-2316211366074563556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,11 +129,11 @@ MonoBehaviour:
   m_Name: UniversalRenderPipelineAsset_Renderer
   m_EditorClassIdentifier: 
   m_RendererFeatures:
-  - {fileID: -1477714255202880380}
+  - {fileID: -4166955367479604058}
   - {fileID: -2316211366074563556}
   - {fileID: 994835761756812825}
   - {fileID: -8998718211447745970}
-  m_RendererFeatureMap: 84f419d3b61a7eeb1c4467cc082adbdf19b65ebdda5dce0d4e92d1c476211e83
+  m_RendererFeatureMap: 4e92d1c476211e8384f419d3b61a7eeb1c4467cc082adbdf19b65ebdda5dce0da68c78b62b002cc6
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   shaders:
     blitPS: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}

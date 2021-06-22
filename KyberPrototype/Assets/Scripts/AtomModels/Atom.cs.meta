@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 9a66b6f253f0f614aac2cc47b8863eff
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - atomData: {instanceID: 0}
+  - bhorModelRingPrefab: {fileID: 4203097906213613198, guid: 023fecae571aa654eb9b0c4ba24350d6,
+      type: 3}
+  - electronPrefab: {fileID: 9109517627552336736, guid: b50f5c2a5bf196b458ad5cf2d7721b54,
+      type: 3}
+  - nucleusPrefab: {fileID: 7856491082423959101, guid: 578c19210d0baa641a089373970b1f0e,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

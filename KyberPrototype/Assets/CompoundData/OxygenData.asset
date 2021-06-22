@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7116896d73fb81a498b417ef10e996e5, type: 3}
+  m_Name: OxygenData
+  m_EditorClassIdentifier: 
+  commonName: Oxygen
+  state: 2
+  density: 0.001429
+  volume: 1
+  temperature: 293.15
+  meltingPoint: 54.36
+  boilingPoint: 90.2
+  sublimationPoint: 0
+  chemicalFormula: O2
+  componentAtoms: O
+  basePrefab: {fileID: 3927279748623988451, guid: a065a0478d8234045af460933ada5a54,
+    type: 3}
+  gradientScale: 2
+  tilingSpeed: 0.4
+  displacementScale: 0.05
+  fresnelPower: 3
+  indexOfRefraction: 0.05
+  tint: {r: 0, g: 0, b: 0, a: 0}
+  emissionColor: {r: 2.9811323, g: 2.7577035, b: 0.6046636, a: 0}
+  atomicNumber: 8
+  massNumber: 16
+  atomicMass: 15.999
+  electroNegativity: 3.44
+  atomicRadius: 152
+  ionizationEnergy: 13.618
