@@ -1546,7 +1546,7 @@ PrefabInstance:
     - target: {fileID: 3434923194134694321, guid: 122f7fc1754dc3247a713a16505443b7,
         type: 3}
       propertyPath: updateDisplay.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3434923194134694321, guid: 122f7fc1754dc3247a713a16505443b7,
         type: 3}
@@ -1562,7 +1562,7 @@ PrefabInstance:
         type: 3}
       propertyPath: updateDisplay.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7998655247189162909}
+      objectReference: {fileID: 2116412730}
     - target: {fileID: 3434923194134694321, guid: 122f7fc1754dc3247a713a16505443b7,
         type: 3}
       propertyPath: updateDisplay.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -1581,7 +1581,7 @@ PrefabInstance:
     - target: {fileID: 3434923194134694321, guid: 122f7fc1754dc3247a713a16505443b7,
         type: 3}
       propertyPath: updateDisplay.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: updateMoleculInfo
+      value: updateAtomInfo
       objectReference: {fileID: 0}
     - target: {fileID: 3434923194134694321, guid: 122f7fc1754dc3247a713a16505443b7,
         type: 3}
@@ -4089,17 +4089,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7998655247189162909 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7998655248461578802, guid: 5d9d7d45d8295ef47bb391f4ca0aa9fb,
-    type: 3}
-  m_PrefabInstance: {fileID: 7998655247189162900}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2822ee56e1aa0f547a542e9b6b60d3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
