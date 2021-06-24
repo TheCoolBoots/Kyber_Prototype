@@ -7,12 +7,8 @@ namespace Kyber
 { 
     public class AtomSpawner : MonoBehaviour
     {
-
-        [HideInInspector]
         public string elementCharacter;
-        [HideInInspector]
         public Transform parent;
-        [HideInInspector]
         public Vector3 spawnPosition;
 
         private GameObject atomModel;
