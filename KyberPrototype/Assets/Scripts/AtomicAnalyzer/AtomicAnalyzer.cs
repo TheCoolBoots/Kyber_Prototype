@@ -1,109 +1,173 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Kyber;
+using Valve.VR.InteractionSystem;
+using UnityEngine.Events;
 
-namespace Kyber
+public class AtomicAnalyzer : MonoBehaviour
 {
-    public class AtomicAnalyzer : MonoBehaviour
+
+    public UnityEvent updateDisplay;
+
+    [Header("Analyzer Pedestal Variables")]
+    [SerializeField] private GameObject canisterShadowPrefab;
+    [SerializeField] private Transform canisterSnapPoint;
+    [SerializeField] private Collider pedestalSnapCollider;
+    [SerializeField] private float snapPointRadius;
+    private GameObject canisterShadowInstance;
+    private bool pedestalOccupied;
+    private GameObject currentEngagedCanister;
+
+    [Header("Atom Spawner Variables")]
+    [SerializeField] private GameObject atomSpawnerPrefab;
+    [SerializeField] private Transform atomSpawnPoint;
+    [SerializeField] private float spawnerSpacing = .3f;
+    private List<GameObject> activeAtomSpawners;
+
+    //[Header("Atomic Analyzer Variables")]
+    private bool active = false;
+    [HideInInspector]
+    public CanisterContentData currentCompoundData;
+
+    // Start is called before the first frame update
+    void Start()
     {
-        public GameObject canisterPedestal;
-        public GameObject atomSpawnerPrefab;
-        public Transform spawnPoint;
+        InitializeAnalyzerPedestal();
+        activeAtomSpawners = new List<GameObject>();
+    }
 
-        public float spawnerSpacing = .3f;
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 
-        public bool active = false;
-        public bool analyzerEnabled = false;
+    /**********************************************************************
+     * Analyzer Pedestal Code
+     **********************************************************************/
+    private void InitializeAnalyzerPedestal()
+    {
+        pedestalSnapCollider.isTrigger = true;
 
-        private AnalyzerPedestal analyzerPedestal;
-        private CanisterContentData currentCompoundData;
-        private List<GameObject> currentAtoms;
+        canisterShadowInstance = Instantiate(canisterShadowPrefab, transform);
+        canisterShadowInstance.transform.localPosition = canisterSnapPoint.localPosition;
+        canisterShadowInstance.SetActive(false);
+    }
 
-        private void Start()
+    private void OnTriggerExit(Collider other)
+    {
+        if (!pedestalOccupied)
+            canisterShadowInstance.SetActive(false);
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (!pedestalOccupied && IsValidCanister(other))
         {
-            currentAtoms = new List<GameObject>(5);
+            Interactable otherInteractable = other.GetComponent<Interactable>();
 
-            if (AnalyzerPedestalValid())
+            if (otherInteractable.attachedToHand)
             {
-                analyzerPedestal = canisterPedestal.GetComponent<AnalyzerPedestal>();
-                analyzerEnabled = true;
+                canisterShadowInstance.SetActive(true);
             }
             else
             {
-                analyzerEnabled = false;
+                EngageCanister(other);
             }
         }
-
-
-        public void AnalyzeCompound()
+        else if (pedestalOccupied && currentEngagedCanister.GetComponent<Interactable>().attachedToHand)
         {
-            if (analyzerEnabled && analyzerPedestal.pedestalOccupied)
-            {
-                // send data to AnalyzerScreen and display it
-                /*    */
-
-                ResetAnalyzer();
-
-                // retrieve data out of canister on pedestal
-                currentCompoundData = analyzerPedestal.currentCanister.GetComponent<CanisterContent>()._data;
-
-                // using compound data, create spawners of specified elements
-                if (currentCompoundData != null)
-                {
-                    InitializeAtomSpawners();
-
-                    // set active flag to true
-                    active = true;
-                }
-
-            }
-            else
-            {
-                Debug.LogError($"Analyzer Enabled: {analyzerEnabled}, Pedestal Occupied: {analyzerPedestal.pedestalOccupied}");
-            }
+            DisengageCanister(currentEngagedCanister);
         }
 
-        private void InitializeAtomSpawners()
+    }
+
+    private void EngageCanister(Collider other)
+    {
+        canisterShadowInstance.SetActive(false);
+        other.gameObject.transform.position = canisterSnapPoint.position;
+        other.gameObject.transform.rotation = canisterSnapPoint.rotation;
+        other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        pedestalOccupied = true;
+        currentEngagedCanister = other.gameObject;
+        currentCompoundData = other.gameObject.GetComponent<CanisterContent>()._data;
+
+        updateDisplay.Invoke();
+    }
+
+    private void DisengageCanister(GameObject canister)
+    {
+        canisterShadowInstance.SetActive(true);
+        canister.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        pedestalOccupied = false;
+        currentCompoundData = null;
+    }
+
+    private bool IsValidCanister(Collider other)
+    {
+        return (other.gameObject.GetComponent<Interactable>() != null && other.gameObject.GetComponent<CanisterContent>() != null);
+    }
+
+    /**********************************************************************
+     * Atom Generation Code
+     **********************************************************************/
+    private void CreateAtomSpawners()
+    {
+        string[] atoms = currentCompoundData.componentAtoms.Split(' '); // "H O" -> ["H", "O"]
+
+        // for each element in the atomComponents list, create an atom spawner
+        for (int i = 0; i < atoms.Length; i++)
         {
-            string[] atoms = currentCompoundData.componentAtoms.Split(' '); // "H O" -> ["H", "O"]
+            GameObject spawner = Instantiate(atomSpawnerPrefab);
+            spawner.GetComponent<AtomSpawner>().elementCharacter = atoms[i];
+            spawner.GetComponent<AtomSpawner>().parent = atomSpawnPoint;
 
-            // for each element in the atomComponents list, create an atom spawner
-            for (int i = 0; i < atoms.Length; i++)
-            {
-                GameObject spawner = Instantiate(atomSpawnerPrefab);
-                spawner.GetComponent<AtomSpawner>().elementCharacter = atoms[i];
-                spawner.GetComponent<AtomSpawner>().parent = spawnPoint;
-
-                // space out each atom spawner with spawnerSpacing between them
-                spawner.GetComponent<AtomSpawner>().spawnPosition = new Vector3(spawnPoint.localPosition.x, spawnPoint.localPosition.y, spawnPoint.localPosition.z - i * spawnerSpacing);
-                spawner.GetComponent<AtomSpawner>().ActivateSpawner();
-                currentAtoms.Add(spawner);
-            }
-        }
-
-        // delete all active atom spawners and set active to false
-        public void ResetAnalyzer()
-        {
-            foreach (GameObject spawner in currentAtoms)
-            {
-                Destroy(spawner);
-            }
-            currentAtoms = new List<GameObject>(5);
-
-            active = false;
-        }
-
-        private bool AnalyzerPedestalValid()
-        {
-            if (canisterPedestal.GetComponent<AnalyzerPedestal>() == null)
-            {
-                Debug.LogError("Given pedestal game object does not contain AnalyzerPedestal script");
-                return false;
-            }
-            return true;
+            // space out each atom spawner with spawnerSpacing between them
+            spawner.GetComponent<AtomSpawner>().spawnPosition = new Vector3(atomSpawnPoint.localPosition.x, atomSpawnPoint.localPosition.y, atomSpawnPoint.localPosition.z - i * spawnerSpacing);
+            spawner.GetComponent<AtomSpawner>().ActivateSpawner();
+            activeAtomSpawners.Add(spawner);
         }
     }
 
-}
+    private void ResetAnalyzer()
+    {
+        foreach (GameObject spawner in activeAtomSpawners)
+        {
+            Destroy(spawner);
+        }
+        activeAtomSpawners = new List<GameObject>(5);
 
+        active = false;
+    }
+
+    /**********************************************************************
+     * Atomic Analyzer Code
+     **********************************************************************/
+    public void AnalyzeCompound()
+    {
+        if (currentEngagedCanister != null)
+        {
+            // send data to AnalyzerScreen and display it
+            Debug.Log("Analyzing");
+
+            ResetAnalyzer();
+
+            // using compound data, create spawners of specified elements
+            if (currentCompoundData != null)
+            {
+                Debug.Log("Creating AtomSpawners");
+                CreateAtomSpawners();
+
+                // set active flag to true
+                active = true;
+            }
+
+        }
+    }
+
+    public bool IsActive()
+    {
+        return active;
+    }
+}

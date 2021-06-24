@@ -55,7 +55,7 @@ namespace Kyber
             currentAtom = Instantiate(atomModel, parent.parent);
             currentInteractable = currentAtom.GetComponent<Interactable>();
             currentAtom.GetComponent<Atom>().atomData = atomData;
-            currentAtom.GetComponent<Atom>().outerDiameter = .3f;
+            currentAtom.GetComponent<Atom>().outerDiameter = .5f;
             currentAtom.GetComponent<Atom>().waitToLoad = false;
             currentAtom.transform.localPosition = spawnPosition;
         }

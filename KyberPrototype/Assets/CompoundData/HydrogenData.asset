@@ -14,8 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commonName: Hydrogen
   state: 2
-  density: 1
+  density: 0.00008988
   volume: 1
+  temperature: 293.15
+  meltingPoint: 13.81
+  boilingPoint: 20.28
+  sublimationPoint: 0
   chemicalFormula: H2
   componentAtoms: H
   basePrefab: {fileID: 3927279748623988451, guid: a065a0478d8234045af460933ada5a54,
@@ -27,3 +31,9 @@ MonoBehaviour:
   indexOfRefraction: 0.05
   tint: {r: 0, g: 0, b: 0, a: 0}
   emissionColor: {r: 4.5412054, g: 0.49929485, b: 4.255894, a: 0}
+  atomicNumber: 1
+  massNumber: 1
+  atomicMass: 1.008
+  electroNegativity: 2.2
+  atomicRadius: 120
+  ionizationEnergy: 13.598
