@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
-  m_Name: NewRenderObjects
+  m_Name: ReflectionTest
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    passTag: NewRenderObjects
-    Event: 400
+    passTag: ReflectionTest
+    Event: 500
     filterSettings:
-      RenderQueueType: 0
+      RenderQueueType: 1
       LayerMask:
         serializedVersion: 2
-        m_Bits: 2048
+        m_Bits: 4294967295
       PassNames: []
     overrideMaterial: {fileID: 0}
     overrideMaterialPassIndex: 0
@@ -130,10 +130,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RendererFeatures:
   - {fileID: -4166955367479604058}
+  - {fileID: -8998718211447745970}
   - {fileID: -2316211366074563556}
   - {fileID: 994835761756812825}
-  - {fileID: -8998718211447745970}
-  m_RendererFeatureMap: 4e92d1c476211e8384f419d3b61a7eeb1c4467cc082adbdf19b65ebdda5dce0da68c78b62b002cc6
+  m_RendererFeatureMap: 4e92d1c476211e8319b65ebdda5dce0d84f419d3b61a7eeb1c4467cc082adbdfc3d59ff43f11c8fd
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   shaders:
     blitPS: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}
@@ -144,10 +144,10 @@ MonoBehaviour:
     fallbackErrorPS: {fileID: 4800000, guid: e6e9a19c3678ded42a3bc431ebef7dbd, type: 3}
   m_OpaqueLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   m_TransparentLayerMask:
     serializedVersion: 2
-    m_Bits: 1829
+    m_Bits: 37
   m_DefaultStencilState:
     overrideStencilState: 0
     stencilReference: 0
