@@ -170,21 +170,8 @@ public class AtomicAnalyzer : MonoBehaviour
 
         }
 
-        string compoundType = (currentCompoundData.type).ToString();
-        Debug.Log("Compound Type : " + compoundType);
-
-        if (compoundType == "Molecule")
-        {
-            MoleculeInfo.SetActive(true);
-            updateMoleculeInfoDisplay.Invoke();
-        }
-        else if (compoundType == "Atom")
-        {
-            AtomInfo.SetActive(true);
-            updateAtomInfoDisplay.Invoke();
-        }
-
-        
+        updateMoleculeInfoDisplay.Invoke(); 
+    
     }
 
     public bool IsActive()
