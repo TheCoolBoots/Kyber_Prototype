@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commonName: Formaldehyde
   state: 1
+  type: 1
   density: 0.8153
   volume: 1
   temperature: 253.15
@@ -37,7 +38,7 @@ MonoBehaviour:
   electroNegativity: 0
   atomicRadius: 0
   ionizationEnergy: 0
-  polarity: 0
-  bondAngle: 0
-  electronGeometry: 
-  molecularGeometry: 
+  polarity: 1
+  bondAngle: 120
+  electronGeometry: Trigoal planar
+  molecularGeometry: Trigoal planar

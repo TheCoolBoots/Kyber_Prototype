@@ -24,7 +24,7 @@ public class MoleculeInfoText : MonoBehaviour
         moleculeFormula.text = atomicAnalyzer.currentCompoundData.chemicalFormula;
         moleculeDensity.text = atomicAnalyzer.currentCompoundData.density.ToString();
         moleculePolrity.text = checkPolarity(atomicAnalyzer.currentCompoundData.polarity);
-        moleculeBondAngle.text = atomicAnalyzer.currentCompoundData.bondAngle.ToString();
+        moleculeBondAngle.text = atomicAnalyzer.currentCompoundData.bondAngle;
         moleculeComponentAtoms.text = atomicAnalyzer.currentCompoundData.componentAtoms;
         moleculeElectronGeo.text = atomicAnalyzer.currentCompoundData.electronGeometry;
         moleculeMolecularGeo.text = atomicAnalyzer.currentCompoundData.molecularGeometry;
@@ -33,16 +33,16 @@ public class MoleculeInfoText : MonoBehaviour
 
     string checkPolarity(bool moleculePolarity)
     {
-        string polar = "n/a";
+        string polarity = "n/a";
         if(moleculePolarity == true)
         {
-            polar = "polar";
+            polarity = "polar";
         }
         else
         {
-            polar = "non polar";
+            polarity = "non polar";
         }
 
-        return polar;
+        return polarity;
     }
 }

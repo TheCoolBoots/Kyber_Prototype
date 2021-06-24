@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commonName: Oxygen
   state: 2
+  type: 1
   density: 0.001429
   volume: 1
   temperature: 293.15
@@ -32,8 +33,12 @@ MonoBehaviour:
   tint: {r: 0, g: 0, b: 0, a: 0}
   emissionColor: {r: 2.9811323, g: 2.7577035, b: 0.6046636, a: 0}
   atomicNumber: 8
-  massNumber: 16
+  valanceElectron: 0
   atomicMass: 15.999
   electroNegativity: 3.44
   atomicRadius: 152
   ionizationEnergy: 13.618
+  polarity: 0
+  bondAngle: 180
+  electronGeometry: Linear
+  molecularGeometry: Linear

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commonName: Methane
   state: 2
+  type: 1
   density: 0.000657
   volume: 1
   temperature: 298.15
@@ -32,8 +33,12 @@ MonoBehaviour:
   tint: {r: 0, g: 0, b: 0, a: 0}
   emissionColor: {r: 0, g: 0, b: 0, a: 0}
   atomicNumber: 0
-  massNumber: 0
+  valanceElectron: 0
   atomicMass: 0
   electroNegativity: 0
   atomicRadius: 0
   ionizationEnergy: 0
+  polarity: 0
+  bondAngle: 109.5
+  electronGeometry: Tetrahedral
+  molecularGeometry: Tetrahedral

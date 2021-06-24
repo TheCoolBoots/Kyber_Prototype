@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commonName: Graphite
   state: 0
+  type: 2
   density: 1
   volume: 2.267
   temperature: 293.15
@@ -32,8 +33,12 @@ MonoBehaviour:
   tint: {r: 0, g: 0, b: 0, a: 0}
   emissionColor: {r: 0, g: 0, b: 0, a: 0}
   atomicNumber: 6
-  massNumber: 12
+  valanceElectron: 0
   atomicMass: 12.011
   electroNegativity: 2.55
   atomicRadius: 170
   ionizationEnergy: 11.26
+  polarity: 0
+  bondAngle: 
+  electronGeometry: 
+  molecularGeometry: 

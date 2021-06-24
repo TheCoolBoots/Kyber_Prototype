@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commonName: Carbon Dioxide
   state: 2
+  type: 1
   density: 0.001977
   volume: 1
   temperature: 298.15
@@ -32,8 +33,12 @@ MonoBehaviour:
   tint: {r: 0, g: 0, b: 0, a: 0}
   emissionColor: {r: 3.4772916, g: 0.24837798, b: 3.9533494, a: 0.2784314}
   atomicNumber: 0
-  massNumber: 0
+  valanceElectron: 0
   atomicMass: 0
   electroNegativity: 0
   atomicRadius: 0
   ionizationEnergy: 0
+  polarity: 0
+  bondAngle: 180
+  electronGeometry: Linear
+  molecularGeometry: Linear

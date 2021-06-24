@@ -9,6 +9,12 @@ namespace Kyber
         Solid, Liquid, Gas, Plasma
     }
 
+    public enum Types : int
+    {
+        Mixture, Molecule, Atom
+    }
+
+
     [CreateAssetMenu(fileName = "CanisterContentData", menuName = "Canister Content Data")]
     public class CanisterContentData : ScriptableObject
     {
@@ -16,6 +22,7 @@ namespace Kyber
         [Header("For All Compounds")]
         public string commonName;
         public States state;
+        public Types type;
         [Tooltip("g/cm^3 at 25C")]
         public float density = 1f;
         public float volume = 1f;
@@ -65,7 +72,7 @@ namespace Kyber
 
         [Header("Molecule Data")]
         public bool polarity;
-        public float bondAngle;
+        public string bondAngle;
         public string electronGeometry;
         public string molecularGeometry; 
 
