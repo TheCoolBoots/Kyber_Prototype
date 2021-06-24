@@ -5,11 +5,16 @@ using UnityEngine.Events;
 using Kyber;
 using Valve.VR.InteractionSystem;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class AtomicAnalyzer : MonoBehaviour
 {
 
-    public UnityEvent updateDisplay;
+    public UnityEvent updateAtomInfoDisplay;
+    public UnityEvent updateMoleculeInfoDisplay;
+
+    private GameObject MoleculeInfo;
+    private GameObject AtomInfo;
 
     [Header("Analyzer Pedestal Variables")]
     [SerializeField] private GameObject canisterShadowPrefab;
@@ -165,12 +170,27 @@ public class AtomicAnalyzer : MonoBehaviour
 
         }
 
-        updateDisplay.Invoke();
+        string compoundType = (currentCompoundData.type).ToString();
+        Debug.Log("Compound Type : " + compoundType);
 
+        if (compoundType == "Molecule")
+        {
+            MoleculeInfo.SetActive(true);
+            updateMoleculeInfoDisplay.Invoke();
+        }
+        else if (compoundType == "Atom")
+        {
+            AtomInfo.SetActive(true);
+            updateAtomInfoDisplay.Invoke();
+        }
+
+        
     }
 
     public bool IsActive()
     {
         return active;
     }
+
+
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commonName: Graphite
   state: 0
-  type: 2
+  type: 1
   density: 1
   volume: 2.267
   temperature: 293.15
