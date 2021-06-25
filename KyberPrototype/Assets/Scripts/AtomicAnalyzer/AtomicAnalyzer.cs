@@ -118,6 +118,13 @@ public class AtomicAnalyzer : MonoBehaviour
      **********************************************************************/
     private void CreateAtomSpawners()
     {
+        for (int i = 0; i < currentCompoundData.componentAtomsList.Length; i++)
+        {
+            GameObject spawner = Instantiate(atomSpawnerPrefab);
+
+        }
+
+
         string[] atoms = currentCompoundData.componentAtoms.Split(' '); // "H O" -> ["H", "O"]
 
         // for each element in the atomComponents list, create an atom spawner

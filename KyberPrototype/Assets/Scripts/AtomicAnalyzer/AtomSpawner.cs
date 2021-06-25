@@ -19,6 +19,7 @@ namespace Kyber
         private GameObject currentAtom;
         private Interactable currentInteractable;
         private AtomData atomData;
+        private CanisterContentData atomData1;
 
         public bool active = false;
 
@@ -33,6 +34,7 @@ namespace Kyber
             }
 
             atomData = Resources.Load($"ElementData/{elementCharacter}") as AtomData;
+            
             InstantiateNewAtom();
             currentAtom.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             
@@ -55,6 +57,7 @@ namespace Kyber
             currentAtom = Instantiate(atomModel, parent.parent);
             currentInteractable = currentAtom.GetComponent<Interactable>();
             currentAtom.GetComponent<Atom>().atomData = atomData;
+            //currentAtom.GetComponent<Atom>.
             currentAtom.GetComponent<Atom>().outerDiameter = .5f;
             currentAtom.GetComponent<Atom>().waitToLoad = false;
             currentAtom.transform.localPosition = spawnPosition;

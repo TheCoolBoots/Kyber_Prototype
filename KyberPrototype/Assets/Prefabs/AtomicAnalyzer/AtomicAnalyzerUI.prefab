@@ -3090,15 +3090,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2822ee56e1aa0f547a542e9b6b60d3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atomicAnalyzer: {fileID: 0}
   moleculeName: {fileID: 0}
   moleculeFormula: {fileID: 0}
   moleculeDensity: {fileID: 0}
   moleculePolrity: {fileID: 0}
   moleculeBondAngle: {fileID: 0}
-  moleculeComposedAtoms: {fileID: 0}
+  moleculeComponentAtoms: {fileID: 0}
   moleculeElectronGeo: {fileID: 0}
   moleculeMolecularGeo: {fileID: 0}
-  moleculeComposition: {fileID: 0}
 --- !u!1 &7998655248591032649
 GameObject:
   m_ObjectHideFlags: 0

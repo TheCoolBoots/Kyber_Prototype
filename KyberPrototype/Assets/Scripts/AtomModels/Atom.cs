@@ -14,7 +14,8 @@ namespace Kyber
             OrbitalElectronsInClouds
         }
 
-        public AtomData atomData;
+        //public AtomData atomData;
+        public CanisterContentData atomData;
         [SerializeField] private GameObject bhorModelRingPrefab;
         [SerializeField] private GameObject electronPrefab;
         [SerializeField] private GameObject nucleusPrefab;
