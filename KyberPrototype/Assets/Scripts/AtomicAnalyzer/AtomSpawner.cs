@@ -4,7 +4,7 @@ using UnityEngine;
 using Valve.VR.InteractionSystem;
 
 namespace Kyber
-{ 
+{
     public class AtomSpawner : MonoBehaviour
     {
         public string elementCharacter;
@@ -18,6 +18,12 @@ namespace Kyber
 
         public bool active = false;
 
+        public void setupAtomSpawner(string character, Transform p, Vector3 position)
+        {
+            elementCharacter = character;
+            parent = p;
+            spawnPosition = position;
+        }
 
         public void ActivateSpawner()
         {
@@ -54,6 +60,7 @@ namespace Kyber
             currentAtom.GetComponent<Atom>().outerDiameter = .5f;
             currentAtom.GetComponent<Atom>().waitToLoad = false;
             currentAtom.transform.localPosition = spawnPosition;
+            currentAtom.transform.Rotate(0, 0, 90, Space.Self);
         }
 
         public void OnDestroy()

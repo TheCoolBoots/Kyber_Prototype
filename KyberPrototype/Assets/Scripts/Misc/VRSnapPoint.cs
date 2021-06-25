@@ -21,6 +21,11 @@ namespace Kyber
         public bool snapPointOccipied = false;
         public GameObject currentSnappedItem;
 
+        public GameObject getCurrentSnappedItem()
+        {
+            return currentSnappedItem;
+        }
+
         private void Awake()
         {
             if (snapPoint == null)
