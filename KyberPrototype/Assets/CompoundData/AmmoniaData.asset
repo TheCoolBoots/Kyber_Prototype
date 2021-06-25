@@ -23,6 +23,9 @@ MonoBehaviour:
   sublimationPoint: -1
   chemicalFormula: NH3
   componentAtoms: N H
+  componentAtomsList:
+  - {fileID: 11400000, guid: 987c684dfede93648836a03bb6a2840a, type: 2}
+  - {fileID: 11400000, guid: 28200ab80012836449a022ddcac7debc, type: 2}
   basePrefab: {fileID: 3927279748623988451, guid: a065a0478d8234045af460933ada5a54,
     type: 3}
   gradientScale: 2
@@ -32,7 +35,10 @@ MonoBehaviour:
   indexOfRefraction: 0.05
   tint: {r: 0, g: 0, b: 0, a: 0}
   emissionColor: {r: 0, g: 0, b: 0, a: 0}
+  scientificName: 
   atomicNumber: 0
+  massNumber: 0
+  charge: 0
   valanceElectron: 0
   atomicMass: 0
   electroNegativity: 0

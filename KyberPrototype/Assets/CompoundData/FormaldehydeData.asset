@@ -23,6 +23,10 @@ MonoBehaviour:
   sublimationPoint: -1
   chemicalFormula: CH2O
   componentAtoms: C H O
+  componentAtomsList:
+  - {fileID: 11400000, guid: fb4c15ac20657ec42b678f956a92cbe6, type: 2}
+  - {fileID: 11400000, guid: 28200ab80012836449a022ddcac7debc, type: 2}
+  - {fileID: 11400000, guid: 006b618e0e307a7438e1785fb738e46b, type: 2}
   basePrefab: {fileID: 4281328415731335403, guid: 934ba1e5af8f20d4a89d1d427665aefa,
     type: 3}
   gradientScale: 2
@@ -32,7 +36,10 @@ MonoBehaviour:
   indexOfRefraction: 0.05
   tint: {r: 0.8113208, g: 0.5902985, b: 0.2028302, a: 0.5372549}
   emissionColor: {r: 0, g: 0, b: 0, a: 0}
+  scientificName: 
   atomicNumber: 0
+  massNumber: 0
+  charge: 0
   valanceElectron: 0
   atomicMass: 0
   electroNegativity: 0

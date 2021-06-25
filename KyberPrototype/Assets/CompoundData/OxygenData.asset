@@ -23,6 +23,8 @@ MonoBehaviour:
   sublimationPoint: 0
   chemicalFormula: O2
   componentAtoms: O
+  componentAtomsList:
+  - {fileID: 11400000}
   basePrefab: {fileID: 3927279748623988451, guid: a065a0478d8234045af460933ada5a54,
     type: 3}
   gradientScale: 2
@@ -32,7 +34,10 @@ MonoBehaviour:
   indexOfRefraction: 0.05
   tint: {r: 0, g: 0, b: 0, a: 0}
   emissionColor: {r: 2.9811323, g: 2.7577035, b: 0.6046636, a: 0}
+  scientificName: Oxygen
   atomicNumber: 8
+  massNumber: 16
+  charge: 0
   valanceElectron: 0
   atomicMass: 15.999
   electroNegativity: 3.44

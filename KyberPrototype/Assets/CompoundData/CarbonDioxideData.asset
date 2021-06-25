@@ -23,6 +23,9 @@ MonoBehaviour:
   sublimationPoint: 194.7
   chemicalFormula: CO2
   componentAtoms: C O
+  componentAtomsList:
+  - {fileID: 11400000, guid: fb4c15ac20657ec42b678f956a92cbe6, type: 2}
+  - {fileID: 11400000, guid: 006b618e0e307a7438e1785fb738e46b, type: 2}
   basePrefab: {fileID: 3927279748623988451, guid: a065a0478d8234045af460933ada5a54,
     type: 3}
   gradientScale: 2
@@ -32,7 +35,10 @@ MonoBehaviour:
   indexOfRefraction: 0.05
   tint: {r: 0, g: 0, b: 0, a: 0}
   emissionColor: {r: 3.4772916, g: 0.24837798, b: 3.9533494, a: 0.2784314}
+  scientificName: 
   atomicNumber: 0
+  massNumber: 0
+  charge: 0
   valanceElectron: 0
   atomicMass: 0
   electroNegativity: 0

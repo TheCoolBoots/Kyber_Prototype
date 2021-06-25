@@ -23,6 +23,8 @@ MonoBehaviour:
   sublimationPoint: 0
   chemicalFormula: H2
   componentAtoms: H
+  componentAtomsList:
+  - {fileID: 11400000, guid: 8d8a3e0eb18cf894b85ab34787f02e82, type: 2}
   basePrefab: {fileID: 3927279748623988451, guid: a065a0478d8234045af460933ada5a54,
     type: 3}
   gradientScale: 2
@@ -32,7 +34,10 @@ MonoBehaviour:
   indexOfRefraction: 0.05
   tint: {r: 0, g: 0, b: 0, a: 0}
   emissionColor: {r: 4.5412054, g: 0.49929485, b: 4.255894, a: 0}
+  scientificName: Hydrogen
   atomicNumber: 1
+  massNumber: 1
+  charge: 0
   valanceElectron: 0
   atomicMass: 1.008
   electroNegativity: 2.2

@@ -20,7 +20,7 @@ using TMPro;
 
         public void updateAtomInfo()
         {
-            atomName.text = atomicAnalyzer.currentCompoundData.commonName;
+            atomName.text = atomicAnalyzer.currentCompoundData.scientificName;
             atomSymbol.text = atomicAnalyzer.currentCompoundData.chemicalFormula;
             atomNumber.text = atomicAnalyzer.currentCompoundData.atomicNumber.ToString();
             atomMass.text = atomicAnalyzer.currentCompoundData.atomicMass.ToString();
@@ -28,8 +28,8 @@ using TMPro;
             atomElectronegativity.text = atomicAnalyzer.currentCompoundData.valanceElectron.ToString();
             atomRadius.text = atomicAnalyzer.currentCompoundData.electroNegativity.ToString();
             atomIonizationEnergy.text = atomicAnalyzer.currentCompoundData.ionizationEnergy.ToString();
+        }
 
-
-    }
+       
     }
 

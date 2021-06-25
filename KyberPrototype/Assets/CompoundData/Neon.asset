@@ -10,23 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7116896d73fb81a498b417ef10e996e5, type: 3}
-  m_Name: CarbonData
+  m_Name: Neon
   m_EditorClassIdentifier: 
-  commonName: Graphite
+  commonName: 
   state: 0
   type: 2
   density: 1
-  volume: 2.267
-  temperature: 293.15
-  meltingPoint: 3823
-  boilingPoint: 4098
+  volume: 1
+  temperature: 298.15
+  meltingPoint: 0
+  boilingPoint: 0
   sublimationPoint: 0
-  chemicalFormula: C
-  componentAtoms: C
-  componentAtomsList:
-  - {fileID: 11400000}
-  basePrefab: {fileID: 1099166263948082481, guid: cb13233c3076bba4baa77b0430dc089a,
-    type: 3}
+  chemicalFormula: 
+  componentAtoms: 
+  componentAtomsList: []
+  basePrefab: {fileID: 0}
   gradientScale: 2
   tilingSpeed: 0.4
   displacementScale: 0.05
@@ -34,15 +32,15 @@ MonoBehaviour:
   indexOfRefraction: 0.05
   tint: {r: 0, g: 0, b: 0, a: 0}
   emissionColor: {r: 0, g: 0, b: 0, a: 0}
-  scientificName: Carbon
-  atomicNumber: 6
-  massNumber: 12
+  scientificName: Neon
+  atomicNumber: 10
+  massNumber: 20
   charge: 0
-  valanceElectron: 0
-  atomicMass: 12.011
-  electroNegativity: 2.55
-  atomicRadius: 170
-  ionizationEnergy: 11.26
+  valanceElectron: 8
+  atomicMass: 20.1797
+  electroNegativity: 0
+  atomicRadius: 38
+  ionizationEnergy: 215645
   polarity: 0
   bondAngle: 
   electronGeometry: 

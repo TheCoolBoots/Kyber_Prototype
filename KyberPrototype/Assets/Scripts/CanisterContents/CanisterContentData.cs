@@ -36,6 +36,7 @@ namespace Kyber
         public float sublimationPoint;
         public string chemicalFormula;
         public string componentAtoms;
+        public List<CanisterContentData> componentAtomsList;
 
         [Tooltip("Solids: a prefab of the model of that solid\nLiquids: the LiquidSphere prefab\nGasses: the EmissionLampBase prefab")]
         public GameObject basePrefab;
@@ -60,7 +61,10 @@ namespace Kyber
 
         [Header("Element Data")]
         // Jean, add tooltips like these to the rest of the entries
+        public string scientificName;
         public int atomicNumber;
+        public int massNumber;
+        public int charge;
         public int valanceElectron;
         public float atomicMass;
         public float electroNegativity;

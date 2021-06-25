@@ -13,8 +13,8 @@ public class AtomicAnalyzer : MonoBehaviour
     public UnityEvent updateAtomInfoDisplay;
     public UnityEvent updateMoleculeInfoDisplay;
 
-    private GameObject MoleculeInfo;
-    private GameObject AtomInfo;
+    [SerializeField] private GameObject MoleculeInfo;
+    [SerializeField] private GameObject AtomInfo;
 
     [Header("Analyzer Pedestal Variables")]
     [SerializeField] private GameObject canisterShadowPrefab;
@@ -170,8 +170,22 @@ public class AtomicAnalyzer : MonoBehaviour
 
         }
 
-        updateMoleculeInfoDisplay.Invoke(); 
-    
+        string compoundType = (currentCompoundData.type).ToString();
+
+        if (compoundType.Equals("Molecule"))
+        {
+            AtomInfo.SetActive(false);
+            MoleculeInfo.SetActive(true);
+            updateMoleculeInfoDisplay.Invoke();
+        }
+        else if (compoundType.Equals("Atom"))
+        {
+            MoleculeInfo.SetActive(false);
+            AtomInfo.SetActive(true);
+            updateAtomInfoDisplay.Invoke();
+        } 
+
+
     }
 
     public bool IsActive()

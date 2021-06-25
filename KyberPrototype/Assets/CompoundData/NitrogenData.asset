@@ -23,6 +23,8 @@ MonoBehaviour:
   sublimationPoint: 0
   chemicalFormula: N2
   componentAtoms: N
+  componentAtomsList:
+  - {fileID: 11400000}
   basePrefab: {fileID: 3927279748623988451, guid: a065a0478d8234045af460933ada5a54,
     type: 3}
   gradientScale: 2
@@ -32,7 +34,10 @@ MonoBehaviour:
   indexOfRefraction: 0.05
   tint: {r: 0, g: 0, b: 0, a: 0}
   emissionColor: {r: 4.237095, g: 0.48804232, b: 3.4162965, a: 0}
+  scientificName: Nitrogen
   atomicNumber: 7
+  massNumber: 14
+  charge: 0
   valanceElectron: 0
   atomicMass: 14.007
   electroNegativity: 3.04

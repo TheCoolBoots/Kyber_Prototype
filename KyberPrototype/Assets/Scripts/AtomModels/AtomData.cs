@@ -10,7 +10,7 @@ namespace Kyber
         public string scientificName;
         public int atomicNumber;
         public int massNumber;
-        public int charge;
+        public int charge;  
     }
 }
 
