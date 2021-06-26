@@ -118,7 +118,7 @@ public class AtomicAnalyzer : MonoBehaviour
      **********************************************************************/
     private void CreateAtomSpawners()
     {
-        for (int i = 0; i < currentCompoundData.componentAtomsList.Length; i++)
+        for (int i = 0; i < currentCompoundData.componentAtomsList.Count; i++)
         {
             GameObject spawner = Instantiate(atomSpawnerPrefab);
 
