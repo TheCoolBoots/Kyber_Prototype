@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: UnderwaterMetalTest
+  m_Name: UWMetal1
   m_Shader: {fileID: -6465566751694194690, guid: bbb99749fe3a2b94aa5b7fc84f47135c,
     type: 3}
   m_ShaderKeywords: 
@@ -102,7 +102,7 @@ Material:
     - Vector1_5443DC82: 1
     - Vector1_7097CEDA: 1
     - Vector1_810FF6ED: 2
-    - Vector1_8567E3BB: 0.352
+    - Vector1_8567E3BB: 0.635
     - Vector1_994EA204: 3.5
     - Vector1_A8CC0681: 5
     - Vector1_BF819EE4: 1
@@ -133,7 +133,7 @@ Material:
     - Color_2123E302: {r: 0, g: 0, b: 0, a: 0}
     - Color_2B7C42F7: {r: 2, g: 2, b: 2, a: 0}
     - Color_B1E2C40E: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
-    - Color_DB714CC1: {r: 1, g: 1, b: 1, a: 0}
+    - Color_DB714CC1: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 0}
     - Color_DCB4A0CF: {r: 0.13333334, g: 0.2509804, b: 0.49019608, a: 1}
     - Vector4_47405F4E: {r: 1, g: 1, b: 0, a: 0}
     - Vector4_85FB229A: {r: 0.4, g: 0.4, b: -0.4, a: -0.4}
