@@ -4,17 +4,19 @@ using UnityEngine;
 using UnityEngine.Events;
 using Kyber;
 using Valve.VR.InteractionSystem;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class AtomicAnalyzer : MonoBehaviour
-{
+{   
 
+    [Header("Analyzer UI Variables")]
     public UnityEvent updateAtomInfoDisplay;
     public UnityEvent updateMoleculeInfoDisplay;
+    [SerializeField] private GameObject moleculeInfo;
+    [SerializeField] private GameObject atomInfo;
+    [SerializeField] private Button viewAtomButton;
+    private AtomInfoText atomInfoText;
 
-    [SerializeField] private GameObject MoleculeInfo;
-    [SerializeField] private GameObject AtomInfo;
 
     [Header("Analyzer Pedestal Variables")]
     [SerializeField] private GameObject canisterShadowPrefab;
@@ -118,13 +120,6 @@ public class AtomicAnalyzer : MonoBehaviour
      **********************************************************************/
     private void CreateAtomSpawners()
     {
-        for (int i = 0; i < currentCompoundData.componentAtomsList.Count; i++)
-        {
-            GameObject spawner = Instantiate(atomSpawnerPrefab);
-
-        }
-
-
         string[] atoms = currentCompoundData.componentAtoms.Split(' '); // "H O" -> ["H", "O"]
 
         // for each element in the atomComponents list, create an atom spawner
@@ -177,23 +172,30 @@ public class AtomicAnalyzer : MonoBehaviour
 
         }
 
+        updateCurrentCanisterInfoUI();
+        viewAtomButton.onClick.AddListener(atomInfoText.updatComponentAtomInfo);
+
+    }       
+
+    private void updateCurrentCanisterInfoUI()
+    {
         string compoundType = (currentCompoundData.type).ToString();
 
         if (compoundType.Equals("Molecule"))
         {
-            AtomInfo.SetActive(false);
-            MoleculeInfo.SetActive(true);
+            atomInfo.SetActive(false);
+            moleculeInfo.SetActive(true);
             updateMoleculeInfoDisplay.Invoke();
         }
         else if (compoundType.Equals("Atom"))
         {
-            MoleculeInfo.SetActive(false);
-            AtomInfo.SetActive(true);
+            moleculeInfo.SetActive(false);
+            atomInfo.SetActive(true);
             updateAtomInfoDisplay.Invoke();
-        } 
-
+        }
 
     }
+
 
     public bool IsActive()
     {

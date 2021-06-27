@@ -2244,15 +2244,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4e49ea8ced6454bb598aef98904e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atomicAnalyzer: {fileID: 0}
-  atomName: {fileID: 0}
-  atomSymbol: {fileID: 0}
-  atomNumber: {fileID: 0}
-  atomMass: {fileID: 0}
-  atomValenceElcetrons: {fileID: 0}
-  atomElectronegativity: {fileID: 0}
-  atomRadius: {fileID: 0}
-  atomIonizationEnergy: {fileID: 0}
+  atomicAnalyzer: {fileID: 943080117}
+  atomName: {fileID: 1539310716}
+  atomSymbol: {fileID: 1621417044}
+  atomNumber: {fileID: 549556071}
+  atomMass: {fileID: 1380862591}
+  atomValenceElcetrons: {fileID: 1716432146}
+  atomElectronegativity: {fileID: 435710517}
+  atomRadius: {fileID: 1463632692}
+  atomIonizationEnergy: {fileID: 1792830026}
+  MoleculeInfo: {fileID: 1289484709}
+  AtomInfo: {fileID: 607112739}
+  viewAtomButton: {fileID: 1519546078}
+  viewNewxtAtomButton: {fileID: 102200281}
 --- !u!114 &607112742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2618,7 +2622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &697325617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3222,7 +3226,17 @@ PrefabInstance:
       objectReference: {fileID: 607112739}
     - target: {fileID: 3434923194134694321, guid: 122f7fc1754dc3247a713a16505443b7,
         type: 3}
+      propertyPath: atomInfo
+      value: 
+      objectReference: {fileID: 607112739}
+    - target: {fileID: 3434923194134694321, guid: 122f7fc1754dc3247a713a16505443b7,
+        type: 3}
       propertyPath: MoleculeInfo
+      value: 
+      objectReference: {fileID: 1289484709}
+    - target: {fileID: 3434923194134694321, guid: 122f7fc1754dc3247a713a16505443b7,
+        type: 3}
+      propertyPath: moleculeInfo
       value: 
       objectReference: {fileID: 1289484709}
     - target: {fileID: 3434923194134694321, guid: 122f7fc1754dc3247a713a16505443b7,
@@ -3230,6 +3244,16 @@ PrefabInstance:
       propertyPath: spawnerSpacing
       value: 0.15
       objectReference: {fileID: 0}
+    - target: {fileID: 3434923194134694321, guid: 122f7fc1754dc3247a713a16505443b7,
+        type: 3}
+      propertyPath: viewAtomButton
+      value: 
+      objectReference: {fileID: 1519546080}
+    - target: {fileID: 3434923194134694321, guid: 122f7fc1754dc3247a713a16505443b7,
+        type: 3}
+      propertyPath: viewNewxtAtomButton
+      value: 
+      objectReference: {fileID: 102200281}
     - target: {fileID: 3434923194134694321, guid: 122f7fc1754dc3247a713a16505443b7,
         type: 3}
       propertyPath: updateDisplay.m_PersistentCalls.m_Calls.Array.size
@@ -3417,6 +3441,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 122f7fc1754dc3247a713a16505443b7, type: 3}
+--- !u!114 &943080117 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3434923194134694321, guid: 122f7fc1754dc3247a713a16505443b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 943080116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 402ec36be773975458ef1afe69829e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1026666391
 GameObject:
   m_ObjectHideFlags: 0
@@ -4080,15 +4116,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2822ee56e1aa0f547a542e9b6b60d3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atomicAnalyzer: {fileID: 0}
-  moleculeName: {fileID: 0}
-  moleculeFormula: {fileID: 0}
-  moleculeDensity: {fileID: 0}
-  moleculePolrity: {fileID: 0}
-  moleculeBondAngle: {fileID: 0}
-  moleculeComponentAtoms: {fileID: 0}
-  moleculeElectronGeo: {fileID: 0}
-  moleculeMolecularGeo: {fileID: 0}
+  atomicAnalyzer: {fileID: 943080117}
+  moleculeName: {fileID: 1473469506}
+  moleculeFormula: {fileID: 645647661}
+  moleculeDensity: {fileID: 1487664694}
+  moleculePolrity: {fileID: 1559512475}
+  moleculeBondAngle: {fileID: 1815688903}
+  moleculeComponentAtoms: {fileID: 699943458}
+  moleculeElectronGeo: {fileID: 1465023964}
+  moleculeMolecularGeo: {fileID: 228048637}
 --- !u!114 &1289484711
 MonoBehaviour:
   m_ObjectHideFlags: 0
