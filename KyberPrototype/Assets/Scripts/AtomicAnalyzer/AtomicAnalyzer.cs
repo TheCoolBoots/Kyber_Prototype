@@ -8,13 +8,14 @@ using UnityEngine.UI;
 
 public class AtomicAnalyzer : MonoBehaviour
 {   
-
-    [Header("Analyzer UI Variables")]
     public UnityEvent updateAtomInfoDisplay;
     public UnityEvent updateMoleculeInfoDisplay;
+
+    [Header("Analyzer UI Variables")]
     [SerializeField] private GameObject moleculeInfo;
     [SerializeField] private GameObject atomInfo;
     [SerializeField] private Button viewAtomButton;
+    [SerializeField] private Button viewNextButton;
     private AtomInfoText atomInfoText;
 
 
@@ -174,6 +175,7 @@ public class AtomicAnalyzer : MonoBehaviour
 
         updateCurrentCanisterInfoUI();
         viewAtomButton.onClick.AddListener(atomInfoText.updatComponentAtomInfo);
+        viewNextButton.onClick.AddListener(atomInfoText.updateNextComponentAtomInfo);
 
     }       
 

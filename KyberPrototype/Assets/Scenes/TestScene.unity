@@ -3251,6 +3251,11 @@ PrefabInstance:
       objectReference: {fileID: 1519546080}
     - target: {fileID: 3434923194134694321, guid: 122f7fc1754dc3247a713a16505443b7,
         type: 3}
+      propertyPath: viewNextButton
+      value: 
+      objectReference: {fileID: 102200283}
+    - target: {fileID: 3434923194134694321, guid: 122f7fc1754dc3247a713a16505443b7,
+        type: 3}
       propertyPath: viewNewxtAtomButton
       value: 
       objectReference: {fileID: 102200281}

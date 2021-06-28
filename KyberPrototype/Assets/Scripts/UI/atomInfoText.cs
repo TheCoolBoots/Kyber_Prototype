@@ -25,7 +25,7 @@ using Kyber;
 
         private CanisterContentData atomTempData;
 
-        private int atomIndex = 0; 
+        private int atomListIdex = 0; 
 
 
 
@@ -61,25 +61,24 @@ using Kyber;
         public void updateNextComponentAtomInfo()
         {
 
-            while (atomIndex < atomicAnalyzer.currentCompoundData.componentAtomsList.Count)
+            atomListIdex++;
+
+            if (atomListIdex >= atomicAnalyzer.currentCompoundData.componentAtomsList.Count)
             {
-                atomTempData = atomicAnalyzer.currentCompoundData.componentAtomsList[atomIndex + 1];
-
-                atomName.text = atomTempData.scientificName;
-                atomSymbol.text = atomTempData.chemicalFormula;
-                atomNumber.text = atomTempData.atomicNumber.ToString();
-                atomMass.text = atomTempData.atomicMass.ToString();
-                atomValenceElcetrons.text = atomTempData.valanceElectron.ToString();
-                atomElectronegativity.text = atomTempData.valanceElectron.ToString();
-                atomRadius.text = atomTempData.electroNegativity.ToString();
-                atomIonizationEnergy.text = atomTempData.ionizationEnergy.ToString();
-
-                
-
+                atomListIdex = 0;
             }
 
-        }
+            atomTempData = atomicAnalyzer.currentCompoundData.componentAtomsList[atomListIdex];
 
-       
+            atomName.text = atomTempData.scientificName;
+            atomSymbol.text = atomTempData.chemicalFormula;               
+            atomNumber.text = atomTempData.atomicNumber.ToString();
+            atomMass.text = atomTempData.atomicMass.ToString();
+            atomValenceElcetrons.text = atomTempData.valanceElectron.ToString();
+            atomElectronegativity.text = atomTempData.valanceElectron.ToString();
+            atomRadius.text = atomTempData.electroNegativity.ToString();
+            atomIonizationEnergy.text = atomTempData.ionizationEnergy.ToString();
+
+        }  
     }
 
