@@ -14,10 +14,6 @@ public class AtomicAnalyzer : MonoBehaviour
     [Header("Analyzer UI Variables")]
     [SerializeField] private GameObject moleculeInfo;
     [SerializeField] private GameObject atomInfo;
-    [SerializeField] private Button viewAtomButton;
-    [SerializeField] private Button viewNextButton;
-    private AtomInfoText atomInfoText;
-
 
     [Header("Analyzer Pedestal Variables")]
     [SerializeField] private GameObject canisterShadowPrefab;
@@ -174,9 +170,6 @@ public class AtomicAnalyzer : MonoBehaviour
         }
 
         updateCurrentCanisterInfoUI();
-        viewAtomButton.onClick.AddListener(atomInfoText.updatComponentAtomInfo);
-        viewNextButton.onClick.AddListener(atomInfoText.updateNextComponentAtomInfo);
-
     }       
 
     private void updateCurrentCanisterInfoUI()
