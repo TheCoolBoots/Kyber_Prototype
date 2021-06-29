@@ -63,6 +63,13 @@ namespace Kyber
             currentAtom.transform.Rotate(0, 0, 90, Space.Self);
         }
 
+        public void transformAtom(Vector3 scale, Vector3 rotation)
+        {
+            currentAtom.transform.localScale = scale;
+            currentAtom.transform.Rotate(rotation);
+        }
+
+
         public void OnDestroy()
         {
             Destroy(currentAtom);
