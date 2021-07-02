@@ -21,7 +21,7 @@ using Kyber;
         [SerializeField] private GameObject MoleculeInfo;
         [SerializeField] private GameObject AtomInfo;
         [SerializeField] private GameObject viewAtomButton;
-        [SerializeField] private GameObject viewNewxtAtomButton;
+        [SerializeField] private GameObject viewNextAtomButton;
 
         private CanisterContentData atomTempData;
 

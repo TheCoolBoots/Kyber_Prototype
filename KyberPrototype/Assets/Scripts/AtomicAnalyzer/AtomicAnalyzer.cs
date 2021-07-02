@@ -170,10 +170,15 @@ public class AtomicAnalyzer : MonoBehaviour
         }
 
         updateCurrentCanisterInfoUI();
+
+        Debug.Log("Working");
     }       
 
     private void updateCurrentCanisterInfoUI()
     {
+
+        Debug.Log("Working 2");
+
         string compoundType = (currentCompoundData.type).ToString();
 
         if (compoundType.Equals("Molecule"))
