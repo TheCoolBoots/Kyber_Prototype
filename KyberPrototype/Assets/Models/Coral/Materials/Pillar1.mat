@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5505902522098285332
+--- !u!114 &-8893363715054885915
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BaseYellow1
+  m_Name: Pillar1
   m_Shader: {fileID: -6465566751694194690, guid: bbb99749fe3a2b94aa5b7fc84f47135c,
     type: 3}
   m_ShaderKeywords: 
@@ -50,7 +50,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_C458AEAF:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 9dbf3904631e89b47871687bb628357d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_D71B5CBC:
@@ -94,7 +94,7 @@ Material:
     - Vector1_37BCBA4C: 60
     - Vector1_3E4E7F58: 0
     - Vector1_3EDBA7E6: 0
-    - Vector1_4CDCA963: 0
+    - Vector1_4CDCA963: 0.5
     - Vector1_5443DC82: 1.2
     - Vector1_7097CEDA: 1
     - Vector1_810FF6ED: 2
@@ -128,12 +128,12 @@ Material:
     m_Colors:
     - Color_2123E302: {r: 0, g: 0, b: 0, a: 0}
     - Color_2B7C42F7: {r: 2, g: 2, b: 2, a: 0}
-    - Color_B1E2C40E: {r: 0.13207549, g: 0.13207549, b: 0.13207549, a: 0}
-    - Color_DB714CC1: {r: 1, g: 0.77521867, b: 0, a: 0}
+    - Color_B1E2C40E: {r: 0, g: 0, b: 0, a: 0}
+    - Color_DB714CC1: {r: 0.8584906, g: 0.7274813, b: 0.41709685, a: 1}
     - Color_DCB4A0CF: {r: 0.13189745, g: 0.25207967, b: 0.49056596, a: 1}
     - Vector4_47405F4E: {r: 1, g: 1, b: 0, a: 0}
-    - Vector4_85FB229A: {r: 0.4, g: 0.4, b: -0.4, a: -0.4}
-    - _BaseColor: {r: 1, g: 0.80166054, b: 0, a: 1}
+    - Vector4_85FB229A: {r: 0.7, g: 0.7, b: -0.7, a: -0.7}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}

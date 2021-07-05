@@ -6,7 +6,67 @@ ModelImporter:
   - first:
       74: -623603649343465320
     second: Scene
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DarkMatt1
+    second: {fileID: 2100000, guid: c2756bf8ebd52aa4b8a08a80ab567251, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DarkMetal1
+    second: {fileID: 2100000, guid: 223438088cf5f324ea1c5bb49cd8dd0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass1
+    second: {fileID: 2100000, guid: 3b864aaef0169af4f82432142be7c313, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass2
+    second: {fileID: 2100000, guid: eeb1c42f89fce094f85b17193af303c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grate
+    second: {fileID: 2100000, guid: 3a3ecdb0b96eb694c8655a04f11cd9e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light
+    second: {fileID: 2100000, guid: 53713f23095a0224cac00a08964ee7a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal1
+    second: {fileID: 2100000, guid: 0b370333977f48340a144d7cf91babd5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SubPlate1
+    second: {fileID: 2100000, guid: 84cc062b8768d124087090980d5fcbfd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SubPlate4
+    second: {fileID: 2100000, guid: aa8baa7c8e4cdfc41b78c4861a1d7e25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WhiteMetal1
+    second: {fileID: 2100000, guid: 52b2eefe83a250743bec88e6de73a6e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: oculusriftscontleft
+    second: {fileID: 2100000, guid: c2756bf8ebd52aa4b8a08a80ab567251, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: oculusriftscontright
+    second: {fileID: 2100000, guid: c2756bf8ebd52aa4b8a08a80ab567251, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

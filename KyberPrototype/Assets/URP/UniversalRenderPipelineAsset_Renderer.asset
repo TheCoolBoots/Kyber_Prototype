@@ -58,6 +58,45 @@ MonoBehaviour:
     blitMaterialPassIndex: 0
     destination: 0
     textureId: _BlitPassTexture
+--- !u!114 &-3066414822055895656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  settings:
+    passTag: Test
+    Event: 550
+    filterSettings:
+      RenderQueueType: 1
+      LayerMask:
+        serializedVersion: 2
+        m_Bits: 1024
+      PassNames: []
+    overrideMaterial: {fileID: 0}
+    overrideMaterialPassIndex: 0
+    overrideDepthState: 0
+    depthCompareFunction: 4
+    enableWrite: 1
+    stencilSettings:
+      overrideStencilState: 0
+      stencilReference: 0
+      stencilCompareFunction: 8
+      passOperation: 0
+      failOperation: 0
+      zFailOperation: 0
+    cameraSettings:
+      overrideCamera: 0
+      restoreCamera: 1
+      offset: {x: 0, y: 0, z: 0, w: 0}
+      cameraFieldOfView: 60
 --- !u!114 &-2316211366074563556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,8 +211,9 @@ MonoBehaviour:
   - {fileID: -747941429325069724}
   - {fileID: -8998718211447745970}
   - {fileID: -2316211366074563556}
+  - {fileID: -3066414822055895656}
   - {fileID: 994835761756812825}
-  m_RendererFeatureMap: 4e92d1c476211e83c3d59ff43f11c8fd19b65ebdda5dce0d84f419d3b61a7eeb1c4467cc082adbdf640248983bc79ef5
+  m_RendererFeatureMap: 4e92d1c476211e83c3d59ff43f11c8fd19b65ebdda5dce0d84f419d3b61a7eeb640248983bc79ef51c4467cc082adbdf989d5d45f7e771d5
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   shaders:
     blitPS: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}
@@ -184,7 +224,7 @@ MonoBehaviour:
     fallbackErrorPS: {fileID: 4800000, guid: e6e9a19c3678ded42a3bc431ebef7dbd, type: 3}
   m_OpaqueLayerMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 1079
   m_TransparentLayerMask:
     serializedVersion: 2
     m_Bits: 37
