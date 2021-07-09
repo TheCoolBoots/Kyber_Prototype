@@ -41,7 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_D71B5CBC:
-        m_Texture: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_ECBB3D1:
@@ -121,7 +121,7 @@ Material:
     - Color_2123E302: {r: 0, g: 0, b: 0, a: 0}
     - Color_2B7C42F7: {r: 6.453342, g: 9.83661, b: 4.036722, a: 0}
     - Color_B1E2C40E: {r: 0.4980392, g: 0.4980392, b: 0.4980392, a: 0}
-    - Color_DB714CC1: {r: 0.25098038, g: 1, b: 0.9613745, a: 0}
+    - Color_DB714CC1: {r: 0.39048594, g: 0.67939097, b: 0.7075472, a: 0}
     - Color_DCB4A0CF: {r: 0.13333334, g: 0.2509804, b: 0.49019608, a: 1}
     - Vector3_4F7C05A1: {r: 0, g: 0, b: 0, a: 0}
     - Vector4_47405F4E: {r: 10, g: 10, b: 0, a: 0}
