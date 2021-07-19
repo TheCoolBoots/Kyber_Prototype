@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.jimmycushnie.noisynodes": "https://github.com/JimmyCushnie/Noisy-Nodes.git",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.formats.alembic": "1.0.7",
     "com.unity.ide.rider": "1.1.4",
