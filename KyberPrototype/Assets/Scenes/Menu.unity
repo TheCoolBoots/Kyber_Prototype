@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -258,9 +258,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 75398945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78f8730d3b6eef3469070190f88b8a45, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ab5f3f8b02019f4ea3a1a0e8ec549c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xbutton:
+    actionPath: /actions/default/in/Menu
+    needsReinit: 0
 --- !u!102 &75398947
 TextMesh:
   serializedVersion: 3
@@ -331,11 +334,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75398945}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 4.57, y: 1.25, z: 1.91}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 6.0340004, y: 1.156, z: 1.845}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 734966428}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &94898347
@@ -677,6 +680,12 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
+--- !u!4 &734966428 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1871206928988672627, guid: 4e74ef11c129b30439652b5888053a45,
+    type: 3}
+  m_PrefabInstance: {fileID: 734966421}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &915190683
 GameObject:
   m_ObjectHideFlags: 0
